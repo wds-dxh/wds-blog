@@ -26,6 +26,11 @@ features:
   - title: 🪖 ptorch
     details: pytorch的一些学习笔记
     link: /机器学习/pytorch/
+  
+  # 友情链接
+  - title: 🌐 潘工
+    details: 潘工的博客
+    link: https://www.pangong.top/
 
     
 ---
