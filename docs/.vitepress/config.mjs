@@ -5,8 +5,13 @@ export default defineConfig({
   title: "邬东升的博客",
   description: "wds's blog",    //做SEO优化
   logo: '/logo.svg',
-  // base: '/wds-blog/',
+  // base: '/wds-blog/',    如果是部署到github pages，需要设置base为仓库名
   lastUpdated: true,  //最后更新时间
+
+  Headers: [
+    ['meta', { name: 'msvalidate.01', content: 'YOUR_VALIDATION_CODE' }], 
+  ],
+  
   markdown: {
     image: {
       // 默认禁用图片懒加载
