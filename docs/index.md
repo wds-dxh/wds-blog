@@ -1,9 +1,6 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
-<!-- 
- <meta name="baidu-site-verification" content="codeva-EuztIWb4rf" />
-  -->
 hero:
   name: "邬东升的博客"
   text: "随笔、技术、生活"
