@@ -8,10 +8,10 @@ export default defineConfig({
   // base: '/wds-blog/',    如果是部署到github pages，需要设置base为仓库名
   lastUpdated: true,  //最后更新时间
 
-  Headers: [
-    ['meta', { name: 'msvalidate.01', content: 'YOUR_VALIDATION_CODE' }], 
+  Headers: [    //头部
+    <meta name="msvalidate.01" content="5DD22862BBCB585FF26B1F2FB033DEA0" />
   ],
-  
+
   markdown: {
     image: {
       // 默认禁用图片懒加载
