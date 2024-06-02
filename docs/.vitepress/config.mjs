@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-
+// 可以使用版本
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "邬东升的博客",
