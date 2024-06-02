@@ -7,15 +7,6 @@ export default defineConfig({
   logo: '/logo.svg',
   // base: '/wds-blog/',
   lastUpdated: true,  //最后更新时间
-
-  vite: {
-    plugins: [
-      AutoNav({
-        // 自定义配置
-      }),
-    ],
-  },
-
   markdown: {
     image: {
       // 默认禁用图片懒加载
