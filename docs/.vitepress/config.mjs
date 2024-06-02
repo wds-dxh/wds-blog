@@ -5,6 +5,7 @@ export default defineConfig({
   title: "邬东升的博客",
   description: "邬东升，东玄海，嵌入式，机器学习，科技作品，课程设计",
   // base: '/wds-blog/',
+  lastUpdated: true,
   markdown: {
     container: {
       tipLabel: '提示',
