@@ -13,6 +13,7 @@ import { inBrowser } from 'vitepress'
 let { route } = useRouter() // 页面路由对象
 const options = {
     id: route.data.title, // 可选，推荐设置为页面标题，因为会作为标签传给Github issues，且issues标签有长度限制。
+    newIssueTitle: '页面评论', // GitHub issue 的标题
     owner: 'wds-dxh', // GitHub repository 所有者
     repo: 'wds-blog', // GitHub repository
     clientID: 'Ov23liQh8kd2LiZHnBm2', // 自己的clientID
@@ -61,3 +62,9 @@ onMounted(() => {
     init()
 })
 </script>
+
+
+
+git add .
+git commit -m "评论"
+git push
