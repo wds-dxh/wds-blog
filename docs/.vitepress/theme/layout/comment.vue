@@ -21,6 +21,9 @@ const options = {
     admin: ['wds-dxh'], // GitHub repository 所有者
     labels: ['Gitalk'], // GitHub issue 的标签
     language: 'zh-CN', // GitHub issue 的语言
+    perPage: 10, // 每次加载的评论数
+    pagerDirection: 'last', // 评论排序方式
+
     createIssueManually: false //如果当前页面没有相应的 isssue 且登录的用户属于 admin，则会自动创建 issue。如果设置为 true，则显示一个初始化页面，创建 issue 需要点击 init 按钮。
 }
 const init = () => {
@@ -65,6 +68,8 @@ onMounted(() => {
 
 
 
+<!--
 git add .
 git commit -m "评论"
 git push
+ -->
