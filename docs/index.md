@@ -22,7 +22,7 @@ features:
   # 友情链接
   - title: 🌐 潘工的博客
     details: 潘工的博客
-    link: https://www.pangong.top/
+    link: http://pls.hxcmulmount.icu/
 
 
   - title: 👓 pyqt6+yolov8
