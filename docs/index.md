@@ -1,7 +1,6 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 title: 首页
-<meta name="msvalidate.01" content="5DD22862BBCB585FF26B1F2FB033DEA0" />
 layout: home
 hero:
   name: "邬东升的博客"
