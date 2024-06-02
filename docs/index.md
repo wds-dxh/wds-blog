@@ -6,7 +6,7 @@ hero:
   name: "邬东升的博客"
   text: "随笔、技术、生活"
   tagline: 心中自有一杆秤，何须他人来妄谈！
-  image: 
+  image:  
     src: /logo.svg
     alt: VitePress Logo
   actions:
