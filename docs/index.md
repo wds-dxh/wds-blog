@@ -1,21 +1,9 @@
-<!--
- * @Author: wds-dxh wdsnpshy@163.com
- * @Date: 2024-06-02 23:57:26
- * @LastEditors: wds-dxh wdsnpshy@163.com
- * @LastEditTime: 2024-06-03 00:03:27
- * @FilePath: /wds-blog/docs/index.md
- * @Description: 
- * 微信: 15310638214 
- * 邮箱：wdsnpshy@163.com 
- * Copyright (c) 2024 by ${wds-dxh}, All Rights Reserved. 
--->
-
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
-
+<!-- 
  <meta name="baidu-site-verification" content="codeva-EuztIWb4rf" />
- 
+  -->
 hero:
   name: "邬东升的博客"
   text: "随笔、技术、生活"
