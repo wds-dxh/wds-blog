@@ -68,19 +68,21 @@ export default defineConfig({
       ]
       },
 
-      { text: 'code', items:[
-        {text: 'python', link: '/learn/code/python/' },
-        {text: 'C++', link: '/learn/code/C++/' },
-        {text: 'go', link: '/learn/code/go/' },
-      ]
-      },
 
-      { text: 'soft', items:[
+      { text: 'software', items:[
         {text: 'inkscape', link: '/learn/soft/inkscape/' },
         {text: 'blender', link: '/learn/soft/blender/' },
       ]
       },
         ]} ,
+
+        { text: 'code', items:[
+          {text: 'python', link: '/learn/code/python/' },
+          {text: 'C++', link: '/learn/code/C++/' },
+          {text: 'go', link: '/learn/code/go/' },
+        ]
+        },
+
 
       { text: '稀奇古怪', link: '/稀奇古怪/' },
 
