@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
-// 可以使用版本
-// https://vitepress.dev/reference/site-config
+// import AutoNav from "vite-plugin-vitepress-auto-nav";
+import sidebar from './sidebar.mjs'
+
 export default defineConfig({
   title: "邬东升的博客",
   description: "wds's blog",    //做SEO优化
@@ -8,10 +9,16 @@ export default defineConfig({
   // base: '/wds-blog/',    如果是部署到github pages，需要设置base为仓库名
   lastUpdated: true,  //最后更新时间
 
-  // Headers: [      //这个是head标签
-  //   ['meta', { name: 'msvalidate.01', content: '5DD22862BBCB585FF26B1F2FB033DEA0' }], 
-  // ],
-  
+
+  // vite: {
+  //   plugins: [
+  //     AutoNav({
+  //       // 自定义配置
+  //     }),
+  //   ],
+  // },
+
+
   markdown: {
     image: {
       // 默认禁用图片懒加载
@@ -89,8 +96,7 @@ export default defineConfig({
       { text: '关于我', link: '/关于我/' }
     ],
 
-    sidebar: {  //侧边栏
-    },
+    sidebar:  sidebar,    //侧边栏
 
     socialLinks: [    //社交链接
       { icon: 'github', link: 'https://github.com/wds-dxh' },
