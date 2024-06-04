@@ -9,7 +9,6 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "@iminu/vitepress-plugin-auto-sidebar": "^1.0.3",
-    "vite-plugin-vitepress-auto-nav": "^2.3.2"
+    "@iminu/vitepress-plugin-auto-sidebar": "^1.0.3"
   }
 }
