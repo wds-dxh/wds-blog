@@ -18,9 +18,9 @@ hero:
 
 features:
   # 友情链接
-  - title: 🌐 潘工的博客
-    details: 潘工的博客
-    link: http://pls.hxcmulmount.icu/
+  - title: 🌐 uwb移动警示牌
+    details: uwb移动警示牌
+    link: /我的作品/uwb移动警示牌/
 
 
   - title: 👓 pyqt6+yolov8
