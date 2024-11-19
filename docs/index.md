@@ -2,14 +2,13 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
-
 hero:
   name: "邬东升的博客"
   text: "随笔、技术、生活"
   tagline: 心中自有一杆秤，何须他人来妄谈！
   image: 
     src: /logo.svg
-    alt: VitePress Logo
+    alt: VitePress Logo 
   actions:
     - theme: brand
       text: 关于我
@@ -19,9 +18,9 @@ hero:
       link: https://github.com/wds-dxh
 
 features:
-  - title: 👓 pyqt6+yolov8
-    details: pyqt6+opencv+yolov8实现的一个简单的关键点检测工具
-    link: /我的作品/pyqt6+yolov8/
+  - title: 👓 星空AIoT开发板
+    details: 星空AIoT开发板的学习指南
+    link: "./星空板/学习指南"
 
   - title: 🪖 ptorch
     details: pytorch的一些学习笔记
