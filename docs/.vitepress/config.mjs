@@ -42,15 +42,6 @@ export default defineConfig({
       ]
     } ,
 
-      { text: '我的作品', items:[
-      {text:"基于关键点检测和深度学习的坐姿识别台灯", link:"/我的作品/基于关键点检测和深度学习的坐姿识别台灯/"},
-      {text:'pyqt6+yolov8', link:'/我的作品/pyqt6+yolov8/'},
-      {text:'uwb移动警示牌', link:'/我的作品/uwb移动警示牌/'},
-      {text:'基于yolov8的传送带垃圾分类', link:'/我的作品/基于yolov8的传送带垃圾分类/'},
-      ]
-        },
-
-
       {text: 'learn', items:[
       { text: 'ML&CV ', items:[
         {text: 'pytorch', link: '/learn/ML&CV/pytorch/' },
