@@ -9,7 +9,9 @@ export default defineConfig({
   logo: '/logo.svg',
   lang: 'zh-CN',  //语言
   lastUpdated: true,  //最后更新时间
-
+  head: [  //头部
+    ['link', { rel: 'icon', href: '/logo.svg' }]
+  ],
   vite: {
     plugins: [
       // add plugin
@@ -17,10 +19,8 @@ export default defineConfig({
         deletePrefix: '.',    //删除前缀
         collapsed: true,      //折叠
         path: 'docs',          //路径
-        deletePrefix: '', // 删除文件名中的 '01-' 前缀
         titleFromFile: true, // 从文件中读取标题
-
-
+        sort: true, // 排序
       })
     ]
   },
@@ -43,8 +43,8 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     siteTitle: '邬东升的博客',
-    logo: '/logo.svg',
-
+    logo: '/logo.svg', // 设置网站标题的 logo
+    
     search: {   //搜索
       provider: 'local'
       },
@@ -57,40 +57,18 @@ export default defineConfig({
       {text:"星空板", link:"/星空板",},
       {text:"学习指南", link:"/星空板/学习指南",},
       ]
-    } ,
-
-      {text: 'learn', items:[
-      { text: 'ML&CV ', items:[
-        {text: 'pytorch', link: '/ML&CV/pytorch/' },
-        {text: 'Resnet', link: '/ML&CV/Resnet/' },
-        {text: 'opencv', link: '/ML&CV/opencv/' },
-        {text: 'CV合集', link: '/ML&CV/CV合集/' },
-          ]
       },
 
-      { text: '嵌入式', items:[
-        {text: 'stm32', link: '/嵌入式/stm32/' },
-        {text: 'linux', link: '/嵌入式/linux/' },
-        {text: 'ROS', link: '/嵌入式/ROS/' },
-        {text: 'esp32', link: '/嵌入式/esp32/' },
+      { text: '文档', items:[
+      {text:"yolov8训练与部署", link:"/文档/yolov8训练与部署/",},
       ]
       },
 
-
-      { text: 'software', items:[
-        {text: 'inkscape', link: '/soft/inkscape/' },
-        {text: 'blender', link: '/soft/blender/' },
+      { text: 'code', items:[
+      {text:"c++", link:"/code/c++/",},  
+      {text:"python", link:"/code/python/",},
       ]
       },
-        ]} ,
-
-        { text: 'code', items:[
-          {text: 'python', link: '/code/python/' },
-          {text: 'C++', link: '/code/C++/' },
-          {text: 'go', link: '/code/go/' },
-        ]
-        },
-
 
       { text: '稀奇古怪', link: '/稀奇古怪/' },
 

@@ -1,9 +1,8 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
-  name: "邬东升的博客"
+  # name: "邬东升的博客"
   text: "随笔、技术、生活"
   tagline: 心中自有一杆秤，何须他人来妄谈！
   image: 
@@ -18,14 +17,16 @@ hero:
       link: https://github.com/wds-dxh
 
 features:
+  # - title: 🤝  友情链接
+  #   details: 一些友情链接
+  #   link: "/team"
+    
   - title: 👓 星空AIoT开发板
     details: 星空AIoT开发板的学习指南
     link: "./星空板/学习指南"
 
-  - title: 🪖 ptorch
-    details: pytorch的一些学习笔记
-    link: "./learn/ML&CV/pytorch"
+  - title: 🪖 yolov8训练与部署
+    details: yolov8训练与部署使用的文档
+    link: "./文档/yolov8训练与部署"
 
-    
 ---
-

@@ -1,0 +1,9 @@
+
+:root {
+  --vp-c-brand-1: #646cff;     /* blue */ 
+  --vp-c-brand-2: #747bff;      /* blue */
+  --vp-c-white: #f6f2f2;           /* 设置背景色 */
+  --vp-font-family-base: 'droid sans', 'Helvetica Neue', sans-serif;  /* 设置字体 */
+  --vp-font-family-mono: 'Courier New, monospace';          /* 设置代码字体 */
+  
+}
