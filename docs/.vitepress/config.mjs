@@ -28,9 +28,9 @@ export default defineConfig({
     siteTitle: '邬东升的博客',
     logo: '/logo.svg',
 
-    // search: {   //搜索
-    //   provider: 'local'
-    //   },
+    search: {   //搜索
+      provider: 'local'
+      },
 
 
     nav: [    //导航栏
