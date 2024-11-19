@@ -1,11 +1,13 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
+
+
 hero:
   name: "邬东升的博客"
   text: "随笔、技术、生活"
   tagline: 心中自有一杆秤，何须他人来妄谈！
-  image:  
+  image: 
     src: /logo.svg
     alt: VitePress Logo
   actions:
@@ -17,15 +19,14 @@ hero:
       link: https://github.com/wds-dxh
 
 features:
-  # 友情链接
-  - title: 🌐 uwb移动警示牌
-    details: uwb移动警示牌
-    link: /我的作品/uwb移动警示牌/
-
-
   - title: 👓 pyqt6+yolov8
     details: pyqt6+opencv+yolov8实现的一个简单的关键点检测工具
     link: /我的作品/pyqt6+yolov8/
-  
+
+  - title: 🪖 ptorch
+    details: pytorch的一些学习笔记
+    link: "./learn/ML&CV/pytorch"
+
+    
 ---
 

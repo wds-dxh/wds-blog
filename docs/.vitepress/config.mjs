@@ -1,23 +1,12 @@
 import { defineConfig } from 'vitepress'
-// import AutoNav from "vite-plugin-vitepress-auto-nav";
-import sidebar from './sidebar.mjs'
+import sidebar from './sidebar.mjs' //导入侧边栏配置
 
+// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "邬东升的博客",
-  description: "wds's blog",    //做SEO优化
+  description: "邬东升的博客",
   logo: '/logo.svg',
-  // base: '/wds-blog/',    如果是部署到github pages，需要设置base为仓库名
   lastUpdated: true,  //最后更新时间
-
-
-  // vite: {
-  //   plugins: [
-  //     AutoNav({
-  //       // 自定义配置
-  //     }),
-  //   ],
-  // },
-
 
   markdown: {
     image: {
@@ -33,13 +22,17 @@ export default defineConfig({
     },
     lineNumbers: true
   },
-  themeConfig: {    //这个是主题配置
+  
+  themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     siteTitle: '邬东升的博客',
     logo: '/logo.svg',
-    search: {
-    provider: 'local'
-    },
+
+    // search: {   //搜索
+    //   provider: 'local'
+    //   },
+
+
     nav: [    //导航栏
       { text: '首页', link: '/' },
 
@@ -96,15 +89,14 @@ export default defineConfig({
       { text: '关于我', link: '/关于我/' }
     ],
 
-    sidebar:  sidebar,    //侧边栏
+    sidebar: sidebar, //侧边栏
 
-    socialLinks: [    //社交链接
-      { icon: 'github', link: 'https://github.com/wds-dxh' },
-      //使用svg显示gitee图标
-      {icon : 'gitee', link: 'https://gitee.com/wds-dxh'},  
+    socialLinks: [  //社交链接
+      { icon: 'github', link: 'https://github.com/wds-dxh' }
     ],
 
-    footer: {
+
+    footer: {     //页脚
       message: "邬东升的博客",
       copyright: 
         '2024.06.02 @wds'
