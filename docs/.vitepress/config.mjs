@@ -49,7 +49,6 @@ export default defineConfig({
       provider: 'local'
       },
 
-
     nav: [    //导航栏
       { text: '首页', link: '/' },
 
@@ -61,6 +60,7 @@ export default defineConfig({
 
       { text: '文档', items:[
       {text:"yolov8训练与部署", link:"/文档/yolov8训练与部署/",},
+      {text:"docker", link:"/文档/docker/",},
       ]
       },
 
