@@ -29,4 +29,8 @@ features:
     details: yolov8训练与部署使用的文档
     link: "./文档/yolov8训练与部署"
 
+  - title: 🪖 下载
+    details: 一些下载链接
+    link: "./download/"
+
 ---
