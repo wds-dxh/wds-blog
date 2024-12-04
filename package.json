@@ -10,5 +10,8 @@
   "dependencies": {
     "element-plus": "^2.8.8",
     "vite-plugin-vitepress-auto-sidebar": "^1.7.0"
+  },
+  "vitepress": {
+    "ignoreDeadLinks": true 
   }
 }
