@@ -1,0 +1,40 @@
+version: '3'
+services:
+  node1:
+    image: wds2dxh/hadoop:v4
+    container_name: node1
+    ports:
+      - "8020:8020"
+      - "9870:9870"
+      - "9864:9864"
+    networks:
+      mynet-hadoop:
+        ipv4_address: 192.168.0.2
+    tty: true
+    stdin_open: true
+
+  node2:
+    image: wds2dxh/hadoop:v4
+    container_name: node2
+    networks:
+      mynet-hadoop:
+        ipv4_address: 192.168.0.3
+    tty: true
+    stdin_open: true
+
+  node3:
+    image: wds2dxh/hadoop:v4
+    container_name: node3
+    networks:
+      mynet-hadoop:
+        ipv4_address: 192.168.0.4
+    tty: true
+    stdin_open: true
+
+networks:
+  mynet-hadoop:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.0.0/16
+          gateway: 192.168.0.1
