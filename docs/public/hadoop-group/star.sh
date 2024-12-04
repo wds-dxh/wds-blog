@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # 启动 Docker Compose
-docker-compose up -d
+docker-compose up -d --wait
+echo "Docker Compose已启动。"
 
 docker stop node1 node2 node3
 #先停止所有容器
