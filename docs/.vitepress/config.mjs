@@ -4,6 +4,7 @@ import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  ignoreDeadLinks: true,  //忽略死链接
   title: "邬东升的博客",        //标题
   description: "邬东升的博客",  //描述
   logo: '/logo.svg',
