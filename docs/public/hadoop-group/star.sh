@@ -1,11 +1,32 @@
 #!/bin/bash
 
-# 启动 Docker Compose
-docker-compose up -d --wait
-echo "Docker Compose已启动。"
-
+# 停止并清理容器
+echo "停止并清理容器..."
 docker stop node1 node2 node3
-#先停止所有容器
+docker rm -f node1 node2 node3
+docker network rm test_mynet-hadoop
+
+
+# 如果有test_mynet-hadoop网络就删除，如果没有就不删除
+if docker network ls | grep test_mynet-hadoop &> /dev/null  # 如果test_mynet-hadoop网络存在
+then
+    echo "删除test_mynet-hadoop网络..."
+    docker network rm test_mynet-hadoop
+    echo "test_mynet-hadoop网络已删除。"
+fi
+
+
+
+# 启动 Docker Compose,如果docker-compose命令不存在，就用docker compose命令
+if command -v docker compose &> /dev/null
+then
+    echo "使用docker compose命令启动容器..."
+    docker compose up -d
+else
+    echo "使用docker-compose命令启动容器..."
+    docker-compose up -d
+fi
+
 
 
 # 启动node1, node2, node3容器
@@ -30,8 +51,6 @@ sleep 1  # 等待1秒
 echo "node3的SSH服务已启动。"
 
 
-# hadoop namenode -format   
-# 格式化HDFS文件系统，只需要执行一次，如果已经执行过，不需要再次执行
 echo "格式化HDFS文件系统..."
 docker exec node1 /opt/hadoop/bin/hadoop namenode -format
 echo "HDFS文件系统格式化完成。"
@@ -42,4 +61,16 @@ echo "启动Hadoop程序..."
 docker exec node1 /opt/hadoop/sbin/start-dfs.sh
 echo "Hadoop程序已启动。"
 
+# 提醒用户访问Web界面地址：http://192.168.0.2:9870
+echo ""-----------------------------------------""
 echo "所有容器的SSH服务已启动。"
+echo "
+ ____________________________________________
+< 请访问Web界面地址：http://192.168.0.2:9870 >
+ --------------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+"
