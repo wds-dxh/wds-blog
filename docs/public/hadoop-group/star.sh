@@ -7,13 +7,22 @@ docker rm -f node1 node2 node3
 docker network rm test_mynet-hadoop
 
 
-# 如果有test_mynet-hadoop网络就删除，如果没有就不删除
-if docker network ls | grep test_mynet-hadoop &> /dev/null  # 如果test_mynet-hadoop网络存在
+# 删除所有名称里面有hadoop的网络
+if docker network ls | grep hadoop &> /dev/null
 then
-    echo "删除test_mynet-hadoop网络..."
-    docker network rm test_mynet-hadoop
-    echo "test_mynet-hadoop网络已删除。"
+    echo "删除所有名称里面有hadoop的网络..."
+    docker network rm $(docker network ls | grep hadoop | awk '{print $1}')
+    echo "所有名称里面有hadoop的网络已删除。"
 fi
+
+
+
+# if docker network ls | grep test_mynet-hadoop &> /dev/null  # 如果test_mynet-hadoop网络存在
+# then
+#     echo "删除test_mynet-hadoop网络..."
+#     docker network rm test_mynet-hadoop
+#     echo "test_mynet-hadoop网络已删除。"
+# fi
 
 
 
