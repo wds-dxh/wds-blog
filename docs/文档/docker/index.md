@@ -93,6 +93,21 @@ sudo docker run hello-world
 ## 阿里云加速
 + 直接参考官网------[地址](https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors)
 
+* 1panel加速：
+
+```shell
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": ["https://docker.1panel.live"]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+
+
 ## 底层原理
 ![](./assets/1732906158411-36392b9f-a108-48b1-929c-6ce72ad0c337.png)
 
