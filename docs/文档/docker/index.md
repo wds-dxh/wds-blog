@@ -128,7 +128,7 @@ sudo systemctl restart docker
 
 ## 2.4 底层原理
 
-![](/Users/dsw/workspace/now/web/wds-blog/docs/文档/docker/assets/1732906158411-36392b9f-a108-48b1-929c-6ce72ad0c337-4063917.png)
+![image-20241213123827978](./assets/image-20241213123827978.png)
 
 ### 客户端
 
@@ -172,7 +172,7 @@ docker images
 
 REPOSITORY 镜像的仓库源 TAG 镜像的标签 IMAGE ID 镜像的ID CREATED 镜像创建时间 SIZE 镜像大小
 
-![](/Users/dsw/workspace/now/web/wds-blog/docs/文档/docker/assets/1732765280397-bfb4851b-b22d-4bb5-be35-543d831ec17e-4063917.png)
+![image-20241213123852843](./assets/image-20241213123852843.png)
 
 ### docker search 
 
@@ -301,13 +301,13 @@ docker logs -tf --tail 10 容器id
 
 + 查看容器内进程信息
 
-![](/Users/dsw/workspace/now/web/wds-blog/docs/文档/docker/assets/1729178746814-2271ca1c-d173-4611-afdf-bf4014c6b5a8-4063917.png)
+![image-20241213123907858](./assets/image-20241213123907858.png)
 
 ### docker inspect 
 
 + 查看容器的元数据
 
-![](/Users/dsw/workspace/now/web/wds-blog/docs/文档/docker/assets/1729178778926-34aea635-fda0-4ac6-b883-5dca86e19ef5-4063917.png)
+![image-20241213123923837](./assets/image-20241213123923837.png)
 
 ###  docker exec 和 docker attach
 
@@ -673,7 +673,7 @@ Docker 会缓存镜像的每一层，这意味着如果你重新构建镜像时�
 docker history 镜像id
 ```
 
-![](/Users/dsw/workspace/now/web/wds-blog/docs/文档/docker/assets/1729317394093-16abe9b4-5c3f-4fde-9778-96761a1bf17b-4063917.png)
+![image-20241213123941301](./assets/image-20241213123941301.png)
 
 
 
@@ -714,19 +714,19 @@ docker push wds2dxh/hadoop:v1.0
 
 #### 每一个安装了Docker的linux主机都有一个docker0的虚拟网卡。这是个桥接网卡，使用了veth-pair 技术！  
 
-![](/Users/dsw/workspace/now/web/wds-blog/docs/文档/docker/assets/1729328341083-9dbb4c6c-d159-49ec-bf83-a351e65e357d-4063917.png)
+<img src="./assets/image-20241213123957309.png" alt="image-20241213123957309" style="zoom:50%;" />
 
 #### 每启动一个容器，linux主机就会多了一个虚拟网卡。  
 
  使用了veth-pair 技术！  
 
-![](/Users/dsw/workspace/now/web/wds-blog/docs/文档/docker/assets/1729329124691-8d6f4253-7004-4b95-aa1c-dafccda06b18-4063917.png)
+![image-20241213124009785](./assets/image-20241213124009785.png)
 
 #### 容器间能够相互ping通，不过是使用的docker0作为路由器
 
 #### 网络模型	  
 
-![](/Users/dsw/workspace/now/web/wds-blog/docs/文档/docker/assets/1729329494016-9a49efc3-d1cb-43ab-8d9c-e93da36a4641-4063917.png)
+<img src="./assets/image-20241213124017642.png" alt="image-20241213124017642" style="zoom:50%;" />
 
 ##  --Link  
 
@@ -760,7 +760,7 @@ docker exec -it test cat /etc/hosts
 
 + 查看有哪些网络
 
-![](/Users/dsw/workspace/now/web/wds-blog/docs/文档/docker/assets/1729330904088-decd8599-bb1b-4d73-960d-45a41acee7c0-4063917.png)
+<img src="./assets/image-20241213124032119.png" alt="image-20241213124032119" style="zoom:50%;" />
 
 ### 网络模式
 
@@ -786,7 +786,7 @@ docker network inspect 网络id
 docker network create --driver bridge --subnet 192.168.0.0/16 --gateway 192.168.0.1 mynet
 ```
 
-![](/Users/dsw/workspace/now/web/wds-blog/docs/文档/docker/assets/1729331333559-28900bb1-3b4e-4a6c-a535-56d01f1740c3-4063917.png)
+![image-20241213124042236](./assets/image-20241213124042236.png)
 
 ### 使用自定义网络
 
