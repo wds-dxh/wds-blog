@@ -25,7 +25,7 @@ nvidia-smi
 #### 3.双击安装，选择安装缓存的路径
 #### 4. 选安装的组件
 #### 5.安装位置
-#### 6.查看是否安装成功
+#### 6.查看是否安装成功(注意是大写的V)
 ```plain
 nvcc -V
 ```
@@ -47,7 +47,7 @@ libnvvp
 
 
 ## 2.配置conda环境
-### 1.下载
+### 1.miniconda下载
 ```plain
 链接：https://pan.baidu.com/s/131-tN39WV44blsPE3TZ3ug?pwd=iofe 
 提取码：iofe 
@@ -56,9 +56,10 @@ libnvvp
 
 
 
-
-
 ### 2.安装
+
+按照步骤即可
+
 ## 3.配置pytorch环境
 ### 1.创建虚拟环境（torch）
 + 查看是否安装完成
@@ -71,23 +72,29 @@ print("CUDA is available" if torch.cuda.is_available() else "CUDA is not availab
 
 ### 2.配置yolov8环境
 
+* 直接按照官网步骤即可。（注意换源的问题！）
+
 
 
 
 ## 4.配置数据集训练
 ### 1.数据集结构
-### 2.yaml文件
-
-
-
+### 2.yaml文件作用
 
 
 
 ## 5.训练和预测
 
+按照视频的即可
 
- 
+
+
 
 ## 6.部署
 ### 1.pt格式转换为ncnn
+
+* 安装的时候pnnx可能会下载有点问题，科学上网即可！
+
 ### 2.使用ncnn推理
+
+* 直接基于yolo框架推理即可，已经集成！

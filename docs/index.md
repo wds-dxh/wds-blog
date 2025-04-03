@@ -31,6 +31,6 @@ features:
 
   - title: 🪖 下载
     details: 一些下载链接
-    link: "./download/"
+    link: " ./download/"
 
 ---
