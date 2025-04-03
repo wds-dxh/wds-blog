@@ -16,12 +16,13 @@ export default defineConfig({
   vite: {
     plugins: [
       // add plugin
-      AutoSidebar({
+      AutoSidebar({   //自动生成侧边栏
         deletePrefix: '.',    //删除前缀
         collapsed: true,      //折叠
         path: 'docs',          //路径
         titleFromFile: true, // 从文件中读取标题
         sort: true, // 排序
+        collapsed: true, // 默认展开
       })
     ]
   },

@@ -9,7 +9,7 @@ nvidia-smi
 
 
 #### 2.下载
-+ 官方下载链接
++ 官方下载链接(需要注册官网账号)
     - [cuda下载链接](https://developer.nvidia.com/cuda-toolkit-archive)
     - [cudnn下载链接](https://developer.nvidia.com/rdp/cudnn-archive)
 + 百度网盘
