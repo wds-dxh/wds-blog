@@ -1,6 +1,12 @@
+'''
+Author: wds-mac wdsnpshy@163.com
+Date: 2024-12-13 12:09:39
+Description: 
+Copyright (c) 2024 by ${wds-mac}, All Rights Reserved. 
+'''
 import os
 import re
-import requests
+import requests #  pip install requests -i https://pypi.tuna.tsinghua.edu.cn/simple
 from urllib.parse import urlparse
 import argparse
 
