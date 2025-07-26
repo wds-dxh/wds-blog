@@ -20,9 +20,8 @@ export default defineConfig({
         deletePrefix: '.',    //删除前缀
         collapsed: true,      //折叠
         path: 'docs',          //路径
-        titleFromFile: true, // 从文件中读取标题
-        sort: true, // 排序
-        collapsed: true, // 默认展开
+        titleFromFile: false, // 使用文件名作为标题
+        sort: true // 排序
       })
     ]
   },
@@ -46,6 +45,12 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     siteTitle: '邬东升的博客',
     logo: '/logo.svg', // 设置网站标题的 logo
+    
+    // 右侧目录配置
+    outline: {
+      level: [1, 6], // 显示H1到H6的所有标题
+      label: 'On this page'
+    },
     
     search: {   //搜索
       provider: 'local'

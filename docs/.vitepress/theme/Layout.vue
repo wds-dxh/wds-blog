@@ -1,45 +1,30 @@
 <template>
-  <div>
-    <header>
-      <h1>邬东升的博客</h1>
-    </header>
-    <main>
-      <div v-if="page.isNotFound">
-        Custom 404 page!
-      </div>
-      <div v-else-if="frontmatter.layout === 'home'">
-        Custom home page!
-      </div>
-      <Content v-else />
-    </main>
-    <footer>
-      <p>© 2023 邬东升的博客</p>
-    </footer>
+  <div class="custom-layout">
+    <!-- 加载进度条 -->
+    <LoadingBar />
+    
+    <!-- 使用默认主题布局 -->
+    <DefaultTheme.Layout>
+      <!-- 在默认布局基础上添加自定义组件 -->
+      <template #layout-bottom>
+        <!-- 返回顶部按钮 -->
+        <BackToTop />
+      </template>
+    </DefaultTheme.Layout>
   </div>
 </template>
 
 <script setup>
+import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress'
+import BackToTop from './components/BackToTop.vue'
+import LoadingBar from './components/LoadingBar.vue'
+
 const { page, frontmatter } = useData()
 </script>
 
-<style>
-header {
-  background-color: #f5f5f5;
-  padding: 1rem;
-  text-align: center;
-}
-
-footer {
-  background-color: #f5f5f5;
-  padding: 1rem;
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-}
-
-main {
-  padding: 2rem;
+<style scoped>
+.custom-layout {
+  min-height: 100vh;
 }
 </style>
