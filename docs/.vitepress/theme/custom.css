@@ -1,11 +1,11 @@
 
 /* 现代化博客主题样式 */
 :root {
-  /* 主题色彩 */
-  --vp-c-brand-1: #3b82f6;     /* 现代蓝色 */ 
-  --vp-c-brand-2: #60a5fa;     /* 浅蓝色 */
-  --vp-c-brand-3: #1e40af;     /* 深蓝色 */
-  --vp-c-brand-soft: #dbeafe; /* 柔和蓝色 */
+  /* 主题色彩 - 淡紫色系 */
+  --vp-c-brand-1: #8b5cf6;     /* 淡紫色 */ 
+  --vp-c-brand-2: #a78bfa;     /* 浅紫色 */
+  --vp-c-brand-3: #7c3aed;     /* 深紫色 */
+  --vp-c-brand-soft: #ede9fe; /* 柔和紫色 */
   
   /* 背景和文字 */
   --vp-c-bg: #ffffff;
@@ -317,13 +317,13 @@ html {
 }
 
 .VPDocAsideOutline .outline-link:hover {
-  background: rgba(64, 158, 255, 0.1);
-  color: #409eff;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--vp-c-brand-1);
 }
 
 .VPDocAsideOutline .outline-link.active {
-  background: rgba(64, 158, 255, 0.15);
-  color: #409eff;
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--vp-c-brand-1);
   font-weight: 500;
 }
 
@@ -332,10 +332,10 @@ html {
   font-size: 15px;
   font-weight: 700;
   color: #1a202c;
-  border-left: 4px solid #409eff;
+  border-left: 4px solid var(--vp-c-brand-1);
   padding-left: 16px;
   margin: 12px 0 6px 0;
-  background: rgba(64, 158, 255, 0.05);
+  background: rgba(139, 92, 246, 0.05);
 }
 
 .VPDocAsideOutline .outline-link-2 {
@@ -344,7 +344,7 @@ html {
   color: #2d3748;
   padding-left: 28px;
   margin: 6px 0 4px 0;
-  border-left: 2px solid #e2e8f0;
+  border-left: 2px solid #f3f0ff;
 }
 
 .VPDocAsideOutline .outline-link-3 {
@@ -353,7 +353,7 @@ html {
   color: #4a5568;
   padding-left: 44px;
   margin: 4px 0 2px 0;
-  border-left: 1px solid #e2e8f0;
+  border-left: 1px solid #f3f0ff;
 }
 
 .VPDocAsideOutline .outline-link-4 {
@@ -411,24 +411,24 @@ html {
 /* 悬停和激活状态 */
 .VPDocAsideOutline .outline-link-1:hover,
 .VPDocAsideOutline .outline-link-1.active {
-  background: rgba(64, 158, 255, 0.15);
+  background: rgba(139, 92, 246, 0.15);
   border-radius: 6px;
   transform: translateX(2px);
 }
 
 .VPDocAsideOutline .outline-link-2:hover,
 .VPDocAsideOutline .outline-link-2.active {
-  background: rgba(64, 158, 255, 0.1);
+  background: rgba(139, 92, 246, 0.1);
   border-radius: 4px;
-  border-left-color: #409eff;
+  border-left-color: var(--vp-c-brand-1);
   transform: translateX(2px);
 }
 
 .VPDocAsideOutline .outline-link-3:hover,
 .VPDocAsideOutline .outline-link-3.active {
-  background: rgba(64, 158, 255, 0.08);
+  background: rgba(139, 92, 246, 0.08);
   border-radius: 4px;
-  border-left-color: #409eff;
+  border-left-color: var(--vp-c-brand-1);
   transform: translateX(1px);
 }
 
@@ -438,7 +438,7 @@ html {
 .VPDocAsideOutline .outline-link-5.active,
 .VPDocAsideOutline .outline-link-6:hover,
 .VPDocAsideOutline .outline-link-6.active {
-  background: rgba(64, 158, 255, 0.06);
+  background: rgba(139, 92, 246, 0.06);
   border-radius: 4px;
   opacity: 1;
 }
