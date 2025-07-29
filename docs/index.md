@@ -15,12 +15,12 @@ hero:
     - theme: alt
       text: 📧 联系我
       link: https://github.com/wds-dxh
-    - theme: alt
-      text: 📚 浏览文档
-      link: /文档/
+    # - theme: alt
+    #   text: 📚 浏览文档
+    #   link: /文档/
 
 features:
-  - title: 🤖 AI & 机器学习
+  - title: 🤖 yolov8模型训练
     details: YOLOv8训练与部署、深度学习模型优化等AI技术分享
     link: "./文档/yolov8训练与部署"
     
@@ -28,8 +28,8 @@ features:
     details: Docker容器化、开发环境配置、工具使用技巧
     link: "./文档/docker/"
     
-  - title: 💻 编程实践
-    details: C++、Python代码示例、算法实现、项目经验分享
+  - title: 💻 c++编程实践
+    details: c++代码示例、算法实现、项目经验分享
     link: "./code/c++/"
     
   - title: 🌟 星空板开发
