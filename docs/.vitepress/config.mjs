@@ -65,15 +65,17 @@ export default defineConfig({
       ]
       },
 
-      { text: '文档', items:[
-      {text:"yolov8训练与部署", link:"/文档/yolov8训练与部署/",},
-      {text:"docker", link:"/文档/docker/",},
+      { text: '技术文档', items:[
+      {text:"文档总览", link:"/文档/",},
+      {text:"YOLOv8训练与部署", link:"/文档/yolov8训练与部署/",},
+      {text:"Docker容器化", link:"/文档/docker/",},
       ]
       },
 
-      { text: 'code', items:[
-      {text:"c++", link:"/code/c++/",},  
-      {text:"python", link:"/code/python/",},
+      { text: '编程代码', items:[
+      {text:"编程总览", link:"/code/",},
+      {text:"Python编程", link:"/code/python/",},  
+      {text:"C++编程", link:"/code/c++/",},
       ]
       },
 

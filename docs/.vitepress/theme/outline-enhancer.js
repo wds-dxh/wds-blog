@@ -1,9 +1,12 @@
-// 目录层级增强器
-// 为VitePress的右侧目录添加层级类名，实现更好的视觉层级效果
+// 目录层级增强器和滚动效果
+// 为VitePress的右侧目录添加层级类名，实现更好的视觉层级效果和滚动跟踪
 
 export function enhanceOutline() {
   // 等待DOM加载完成
   if (typeof window === 'undefined') return;
+  
+  let activeHeading = null;
+  let headings = [];
   
   function addOutlineLevelClasses() {
     // 获取所有目录链接
@@ -23,18 +26,128 @@ export function enhanceOutline() {
           
           // 添加新的层级类名
           link.classList.add(`outline-link-${level}`);
-          
-          console.log(`添加层级类名: outline-link-${level} 到链接: ${link.textContent.trim()}`);
         }
       }
+    });
+    
+    // 更新标题数组
+    updateHeadings();
+    // 初始化滚动监听
+    initScrollTracking();
+  }
+  
+  function updateHeadings() {
+    // 获取所有标题元素
+    headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6'))
+      .filter(heading => heading.id)
+      .map(heading => ({
+        element: heading,
+        id: heading.id,
+        level: parseInt(heading.tagName.substring(1)),
+        offsetTop: heading.offsetTop
+      }))
+      .sort((a, b) => a.offsetTop - b.offsetTop);
+  }
+  
+  function initScrollTracking() {
+    // 移除之前的滚动监听器
+    window.removeEventListener('scroll', handleScroll);
+    // 添加新的滚动监听器
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // 立即执行一次以设置初始状态
+    handleScroll();
+  }
+  
+  function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    
+    // 找到当前可视区域的标题
+    let currentHeading = null;
+    
+    for (let i = headings.length - 1; i >= 0; i--) {
+      const heading = headings[i];
+      // 标题顶部距离文档顶部的距离减去一些偏移量（考虑导航栏高度）
+      if (scrollTop >= heading.element.offsetTop - 100) {
+        currentHeading = heading;
+        break;
+      }
+    }
+    
+    // 如果没找到，使用第一个标题
+    if (!currentHeading && headings.length > 0) {
+      currentHeading = headings[0];
+    }
+    
+    // 更新活跃状态
+    if (currentHeading && currentHeading !== activeHeading) {
+      updateActiveHeading(currentHeading);
+      activeHeading = currentHeading;
+    }
+  }
+  
+  function updateActiveHeading(heading) {
+    // 移除所有活跃状态
+    document.querySelectorAll('.VPDocAsideOutline .outline-link.active')
+      .forEach(link => link.classList.remove('active'));
+    
+    // 添加新的活跃状态
+    const activeLink = document.querySelector(`.VPDocAsideOutline .outline-link[href="#${heading.id}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active');
+      
+      // 平滑滚动目录到可视区域
+      const outline = document.querySelector('.VPDocAsideOutline');
+      if (outline && activeLink.offsetParent) {
+        const outlineRect = outline.getBoundingClientRect();
+        const linkRect = activeLink.getBoundingClientRect();
+        
+        // 如果链接不在可视区域内，滚动目录
+        if (linkRect.top < outlineRect.top || linkRect.bottom > outlineRect.bottom) {
+          activeLink.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+        }
+      }
+    }
+  }
+  
+  function addSmoothScrollToLinks() {
+    // 为目录链接添加平滑滚动效果
+    document.querySelectorAll('.VPDocAsideOutline .outline-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            // 平滑滚动到目标位置，考虑导航栏高度
+            const offsetTop = targetElement.offsetTop - 80;
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+            
+            // 更新URL
+            history.replaceState(null, null, href);
+          }
+        }
+      });
     });
   }
   
   // 页面加载时执行
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', addOutlineLevelClasses);
-  } else {
+  function init() {
     addOutlineLevelClasses();
+    addSmoothScrollToLinks();
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
   
   // 监听路由变化（VitePress的SPA导航）
@@ -51,7 +164,10 @@ export function enhanceOutline() {
           );
           
           if (hasOutlineChanges) {
-            setTimeout(addOutlineLevelClasses, 100); // 延迟执行确保DOM完全更新
+            setTimeout(() => {
+              addOutlineLevelClasses();
+              addSmoothScrollToLinks();
+            }, 100); // 延迟执行确保DOM完全更新
           }
         }
       });
@@ -65,8 +181,16 @@ export function enhanceOutline() {
     
     // 监听popstate事件（浏览器前进后退）
     window.addEventListener('popstate', () => {
-      setTimeout(addOutlineLevelClasses, 200);
+      setTimeout(() => {
+        addOutlineLevelClasses();
+        addSmoothScrollToLinks();
+      }, 200);
     });
+    
+    // 监听窗口大小变化，重新计算标题位置
+    window.addEventListener('resize', () => {
+      setTimeout(updateHeadings, 100);
+    }, { passive: true });
   }
 }
 
