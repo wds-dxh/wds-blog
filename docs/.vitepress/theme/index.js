@@ -9,7 +9,7 @@ import ElementPlus from 'element-plus'
 import Layout from './Layout.vue'
 import BackToTop from './components/BackToTop.vue'
 import LoadingBar from './components/LoadingBar.vue'
-import { enhanceOutline } from './outline-enhancer.js'
+import { enhanceOutline } from './outline-enhancer.ts'
 import './custom.css'
 
 export default {
