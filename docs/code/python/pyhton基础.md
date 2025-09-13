@@ -1,4 +1,4 @@
-# python 
+# 1. 基础语法
 
 ## 1.1. 编码方式
 
@@ -192,7 +192,7 @@ Python3 的六个标准数据类型中：
 
 ### 2.3.1. 索引
 
-![img](./assets/1730381154633-96ecd045-77ed-4044-9b8d-fc4aa5e496d0.png)
+![img](/workspace/now/2025/wds/wds-blog/docs/code/python/assets/1730381154633-96ecd045-77ed-4044-9b8d-fc4aa5e496d0-1757660499143-1.png)
 
 ### 2.3.2. 注意
 
@@ -235,7 +235,7 @@ Python3 的六个标准数据类型中：
 
 ### 2.5.1. 索引
 
-![img](./assets/1730381380951-aee3d659-f609-413e-9c2e-6d689a588079.png)
+![img](/workspace/now/2025/wds/wds-blog/docs/code/python/assets/1730381380951-aee3d659-f609-413e-9c2e-6d689a588079-1757660499143-3.png)
 
 ### 2.5.2. 注意
 
@@ -657,7 +657,7 @@ else:
     <statements>
 ```
 
-![img](./assets/1730385748545-223cbc17-6864-4a94-9b89-7a212d803795.png)
+![img](/workspace/now/2025/wds/wds-blog/docs/code/python/assets/1730385748545-223cbc17-6864-4a94-9b89-7a212d803795-1757660499143-5.png)
 
 ### 例子
 
@@ -720,7 +720,7 @@ Python pass是空语句，是为了保持程序结构的完整性，有些情况
 
 pass 不做任何事情，一般用做占位语句，如下实例
 
-![img](./assets/1743132912910-8a927424-3e5e-4aca-90da-66a2897c021e.png)
+![img](/workspace/now/2025/wds/wds-blog/docs/code/python/assets/1743132912910-8a927424-3e5e-4aca-90da-66a2897c021e-1757660499143-7.png)
 
 # 6. 推导式（从一个数据序列构建一个新的数据序列）
 
@@ -1190,285 +1190,9 @@ x = lambda a, b, c : a + b + c
 print(x(5, 6, 2))
 ```
 
-# 9. 面向对象
+# 9. 面向对象：
 
-## 9.1. 面向对象技术简介
-
-- 类(Class): 用来描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法。对象是类的实例。
-- 方法：类中定义的函数。
-- 类变量：类变量在整个实例化的对象中是公用的。类变量定义在类中且在函数体之外。类变量通常不作为实例变量使用。
-- 数据成员：类变量或者实例变量用于处理类及其实例对象的相关的数据。
-- 方法重写：如果从父类继承的方法不能满足子类的需求，可以对其进行改写，这个过程叫方法的覆盖（override），也称为方法的重写。
-- 局部变量：定义在方法中的变量，只作用于当前实例的类。
-- 实例变量：在类的声明中，属性是用变量来表示的，这种变量就称为实例变量，实例变量就是一个用 self 修饰的变量。
-- 继承：即一个派生类（derived class）继承基类（base class）的字段和方法。继承也允许把一个派生类的对象作为一个基类对象对待。例如，有这样一个设计：一个Dog类型的对象派生自Animal类，这是模拟"是一个（is-a）"关系（例图，Dog是一个Animal）。
-- 实例化：创建一个类的实例，类的具体对象。
-- 对象：通过类定义的数据结构实例。对象包括两个数据成员（类变量和实例变量）和方法。
-
-## 9.2. 类定义
-
-语法格式如下：
-
-```python
-class ClassName:
-    <statement-1>
-    .
-    .
-    .
-    <statement-N>
-```
-
-## 9.3. 类对象
-
-类对象支持两种操作：属性引用和实例化。
-
-属性引用使用和 Python 中所有的属性引用一样的标准语法：obj.name。
-
-类对象创建后，类命名空间中所有的命名都是有效属性名。所以如果类定义是这样:
-
-```python
-#!/usr/bin/python3
- 
-class MyClass:
-    """一个简单的类实例"""
-    i = 12345
-    def f(self):
-        return 'hello world'
- 
-# 实例化类
-x = MyClass()
- 
-# 访问类的属性和方法
-print("MyClass 类的属性 i 为：", x.i)
-print("MyClass 类的方法 f 输出为：", x.f())
-```
-
-结果
-
-```python
-MyClass 类的属性 i 为： 12345
-MyClass 类的方法 f 输出为： hello world
-```
-
-------
-
-类有一个名为 __init__() 的特殊方法（构造方法），该方法在类实例化时会自动调用，像下面这样：
-
-```python
-def __init__(self):
-    self.data = []
-```
-
-## 9.4. self 代表类的实例，而非类 ------非常重要 
-
-- 没有实例化的时候方法静态方法不能使用
-
-类的方法与普通的函数只有一个特别的区别——它们必须有一个额外的第一个参数名称, 按照惯例它的名称是 self。
-
-```python
-class Test:
-    def prt(self):
-        print(self)
-        print(self.__class__)
- 
-t = Test()
-t.prt()
-```
-
-结果：
-
-```python
-<__main__.Test instance at 0x100771878>
-__main__.Test
-```
-
-## 9.5. 继承
-
-Python 同样支持类的继承，如果一种语言不支持继承，类就没有什么意义。派生类的定义如下所示:
-
-```python
-class DerivedClassName(BaseClassName):
-    <statement-1>
-    .
-    .
-    .
-    <statement-N>
-#!/usr/bin/python3
- 
-#类定义
-class people:
-    #定义基本属性
-    name = ''
-    age = 0
-    #定义私有属性,私有属性在类外部无法直接进行访问
-    __weight = 0
-    #定义构造方法
-    def __init__(self,n,a,w):
-        self.name = n
-        self.age = a
-        self.__weight = w
-    def speak(self):
-        print("%s 说: 我 %d 岁。" %(self.name,self.age))
- 
-#单继承示例
-class student(people):
-    grade = ''
-    def __init__(self,n,a,w,g):
-        #调用父类的构函
-        people.__init__(self,n,a,w)
-        self.grade = g
-    #覆写父类的方法
-    def speak(self):
-        print("%s 说: 我 %d 岁了，我在读 %d 年级"%(self.name,self.age,self.grade))
- 
- 
- 
-s = student('ken',10,60,3)
-s.speak()
-```
-
-## 9.6. 多继承
-
-Python同样有限的支持多继承形式。多继承的类定义形如下例:
-
-```python
-class DerivedClassName(Base1, Base2, Base3):
-    <statement-1>
-    .
-    .
-    .
-    <statement-N>
-```
-
-需要注意圆括号中父类的顺序，若是父类中有相同的方法名，而在子类使用时未指定，python从左至右搜索 即方法在子类中未找到时，从左到右查找父类中是否包含方法。
-
-例子:
-
-```python
-#!/usr/bin/python3
- 
-#类定义
-class people:
-    #定义基本属性
-    name = ''
-    age = 0
-    #定义私有属性,私有属性在类外部无法直接进行访问
-    __weight = 0
-    #定义构造方法
-    def __init__(self,n,a,w):
-        self.name = n
-        self.age = a
-        self.__weight = w
-    def speak(self):
-        print("%s 说: 我 %d 岁。" %(self.name,self.age))
- 
-#单继承示例
-class student(people):
-    grade = ''
-    def __init__(self,n,a,w,g):
-        #调用父类的构函
-        people.__init__(self,n,a,w)
-        self.grade = g
-    #覆写父类的方法
-    def speak(self):
-        print("%s 说: 我 %d 岁了，我在读 %d 年级"%(self.name,self.age,self.grade))
- 
-#另一个类，多继承之前的准备
-class speaker():
-    topic = ''
-    name = ''
-    def __init__(self,n,t):
-        self.name = n
-        self.topic = t
-    def speak(self):
-        print("我叫 %s，我是一个演说家，我演讲的主题是 %s"%(self.name,self.topic))
- 
-#多继承
-class sample(speaker,student):
-    a =''
-    def __init__(self,n,a,w,g,t):
-        student.__init__(self,n,a,w,g)
-        speaker.__init__(self,n,t)
- 
-test = sample("Tim",25,80,4,"Python")
-test.speak()   #方法名同，默认调用的是在括号中参数位置排前父类的方法
-```
-
-## 9.7. 方法重写（重写父类的方法）
-
-如果你的父类方法的功能不能满足你的需求，你可以在子类重写你父类的方法，实例如下：
-
-```python
-#!/usr/bin/python3
- 
-class Parent:        # 定义父类
-   def myMethod(self):
-      print ('调用父类方法')
- 
-class Child(Parent): # 定义子类
-   def myMethod(self):
-      print ('调用子类方法')
- 
-c = Child()          # 子类实例
-c.myMethod()         # 子类调用重写方法
-super(Child,c).myMethod() #用子类对象调用父类已被覆盖的方法	
-```
-
-## 9.8. 类属性与方法
-
-### 9.8.1. 类的私有属性
-
-__private_attrs：两个下划线开头，声明该属性为私有，不能在类的外部被使用或直接访问。在类内部的方法中使用时 self.__private_attrs。
-
-### 9.8.2. 类的方法
-
-在类的内部，使用 def 关键字来定义一个方法，与一般函数定义不同，类方法必须包含参数 self，且为第一个参数，self 代表的是类的实例。
-
-self 的名字并不是规定死的，也可以使用 this，但是最好还是按照约定使用 self。
-
-### 9.8.3. 类的私有方法(不能被外部程序访问）
-
-__private_method：两个下划线开头，声明该方法为私有方法，只能在类的内部调用 ，不能在类的外部调用。self.__private_methods。
-
-### 9.8.4. 类的专有方法
-
-- **__init__ :** 构造函数，在生成对象时调用
-- **__del__ :** 析构函数，释放对象时使用
-- **__repr__ :** 打印，转换
-- **__setitem__ :** 按照索引赋值
-- **__getitem__:** 按照索引获取值
-- **__len__:** 获得长度
-- **__cmp__:** 比较运算
-- **__call__:** 函数调用
-- **__add__:** 加运算
-- **__sub__:** 减运算
-- **__mul__:** 乘运算
-- **__truediv__:** 除运算
-- **__mod__:** 求余运算
-- **__pow__:** 乘方
-
-### 9.8.5. 运算符重载（基于类的专有方法实现
-
-Python同样支持运算符重载，我们可以对类的专有方法进行重载，实例如下：
-
-```python
-#!/usr/bin/python3
- 
-class Vector:
-   def __init__(self, a, b):
-      self.a = a
-      self.b = b
- 
-   def __str__(self):
-      return 'Vector (%d, %d)' % (self.a, self.b)
-   
-   def __add__(self,other):
-      return Vector(self.a + other.a, self.b + other.b)
- 
-v1 = Vector(2,10)
-v2 = Vector(5,-2)
-print (v1 + v2)
-```
+[2 面向对象](https://www.yuque.com/wds2dxh/gt6gw7/sfgvo723z5dud33k)
 
 # 10. 模块
 
@@ -1825,13 +1549,9 @@ while True:
     lines.append(line)
 ```
 
-## 11.3. 文件输入输出
+## 11.3. 高级输入输出
 
-[文件操作](https://www.yuque.com/wds2dxh/gt6gw7/wb3g4zfxi8nn4mb3)
-
-## 11.4. 高级输入输出
-
-### 11.4.1. sys模块的输入输出
+### 11.3.1. sys模块的输入输出
 
 ```python
 import sys
@@ -1845,7 +1565,7 @@ for line in sys.stdin:
     print(f'读取到：{line.strip()}')
 ```
 
-### 11.4.2. print函数的高级用法
+### 11.3.2. print函数的高级用法
 
 ```python
 # 控制输出格式
@@ -1864,7 +1584,7 @@ items = ['苹果', '香蕉', '橙子']
 print(*items, sep=', ')                  # 苹果, 香蕉, 橙子
 ```
 
-### 11.4.3. JSON数据的输入输出
+### 11.3.3. JSON数据的输入输出
 
 ```python
 import json
@@ -1884,7 +1604,7 @@ json_str = json.dumps(data, ensure_ascii=False)
 parsed_data = json.loads(json_str)
 ```
 
-### 11.4.4. CSV文件处理
+### 11.3.4. CSV文件处理
 
 ```python
 import csv
@@ -1913,9 +1633,9 @@ with open('students.csv', 'r', encoding='utf-8') as f:
         print(f"{row['姓名']}的分数是{row['分数']}")
 ```
 
-## 11.5. 实用技巧和最佳实践
+## 11.4. 实用技巧和最佳实践
 
-### 11.5.1. 输入验证
+### 11.4.1. 输入验证
 
 ```python
 def get_valid_input(prompt, validator, error_msg):
@@ -1936,7 +1656,7 @@ age = get_valid_input(
 )
 ```
 
-### 11.5.2. 进度显示
+### 11.4.2. 进度显示
 
 ```python
 import time
@@ -1955,7 +1675,7 @@ for i in range(1, 101):
 print()  # 换行
 ```
 
-### 11.5.3. 彩色输出
+### 11.4.3. 彩色输出
 
 ```python
 # ANSI颜色代码
@@ -1974,9 +1694,13 @@ print(f"{Colors.GREEN}成功信息{Colors.END}")
 print(f"{Colors.YELLOW}警告信息{Colors.END}")
 ```
 
-# 12. Python 错误与异常详解
+# 12. 文件操作
 
-## 12.1. 异常基础
+[0文件操作](https://www.yuque.com/wds2dxh/gt6gw7/wb3g4zfxi8nn4mb3)
+
+# 13. Python 错误与异常详解
+
+## 13.1. 异常基础
 
 - **异常（Exception）**：运行时发生的不正常情况，由 `Exception` 类及其子类表示。
 - **抛出**：当错误出现时，Python 会“抛出”一个异常实例。
@@ -1984,7 +1708,7 @@ print(f"{Colors.YELLOW}警告信息{Colors.END}")
 
 ------
 
-## 12.2. `try` / `except` / `else` / `finally`
+## 13.2. `try` / `except` / `else` / `finally`
 
 ```python
 try:
@@ -2005,7 +1729,7 @@ finally:
 - `**else**` **块**：无异常时执行，适合放主逻辑后续。
 - `**finally**` **块**：始终执行，用于释放资源（文件、网络、数据库连接等）。
 
-## 12.3. 主动抛出异常：`raise`
+## 13.3. 主动抛出异常：`raise`
 
 ```python
 class FooError(ValueError):
@@ -2032,7 +1756,7 @@ except FooError as e:
 
 ------
 
-## 12.4. 断言校验：`assert`
+## 13.4. 断言校验：`assert`
 
 ```python
 def divide(s):
@@ -2046,9 +1770,9 @@ def divide(s):
 
 ------
 
-## 12.5. 调试工具：`pdb`
+## 13.5. 调试工具：`pdb`
 
-### 12.5.1. 命令行模式
+### 13.5.1. 命令行模式
 
 ```bash
 python -m pdb myscript.py
@@ -2063,7 +1787,7 @@ python -m pdb myscript.py
 - `p expr`：打印表达式的值
 - `q`：退出调试器
 
-### 12.5.2. 代码中断点
+### 13.5.2. 代码中断点
 
 ```python
 import pdb
@@ -2075,7 +1799,7 @@ def foo():
 foo()
 ```
 
-## 12.6. 综合示例
+## 13.6. 综合示例
 
 ```python
 import logging, pdb
@@ -2108,7 +1832,7 @@ if __name__ == "__main__":
 - `pdb` 进行交互式调试；
 - `raise` 主动抛错，突出异常原因。
 
-# 13. Python 作用域（Scope）
+# 14. Python 作用域（Scope）
 
 作用域（Scope）决定了在程序的哪一部分可以访问特定的变量名称。Python 遵循 **LEGB** 规则，按从内到外的顺序搜索名称：
 
@@ -2149,9 +1873,9 @@ print("global:", x)  # 使用 Global
 
 ------
 
-## 13.1. `global` 与 `nonlocal` 关键字
+## 14.1. `global` 与 `nonlocal` 关键字
 
-### 13.1.1. 1. `global`
+### 14.1.1. 1. `global`
 
 - **用途**：在函数内声明某名字指向模块级全局变量，允许读写该全局变量
 - **示例**：
@@ -2170,7 +1894,7 @@ print("outside:", count)  # outside: 1
 
 - **注意**：若不加 `global`，函数体内对同名变量的赋值会创建一个新的局部变量，遮蔽全局同名变量。
 
-### 13.1.2. 2. `nonlocal`（变量必须要已在外部定义）
+### 14.1.2. 2. `nonlocal`（变量必须要已在外部定义）
 
 - **用途**：在嵌套函数中声明某名字指向最内层外侧（Enclosing）函数作用域的变量，允许读写
 - **示例**：
@@ -2198,7 +1922,7 @@ outer()
 
 ------
 
-## 13.2. 常见误区与注意事项
+## 14.2. 常见误区与注意事项
 
 1. **函数内直接读取全局变量**
 
@@ -2242,9 +1966,16 @@ list = [1,2,3]
 
 ------
 
-## 13.3. 实战小贴士
+## 14.3. 实际使用
 
 - **尽量减少** `**global**` **使用**，全局可变状态易出错；
 - **闭包场景需谨慎**，`nonlocal` 用于状态保存或工厂函数；
 - **遵守命名规范**，避免与内建名、模块全局名冲突；
 - **优先使用函数参数和返回值**，以减少对外部状态的依赖。
+
+
+
+**—— 本文内容是学习 python3 菜鸟教程 以及 廖雪峰python3 的笔记，结合一些自己的理解整理而成。**
+**原文链接：**
+
+[**https://liaoxuefeng.com/books/python/introduction/index.html**](https://liaoxuefeng.com/books/python/introduction/index.html) [**https://www.runoob.com/python3/python3-tutorial.html**](https://www.runoob.com/python3/python3-tutorial.html)

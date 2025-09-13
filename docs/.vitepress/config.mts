@@ -63,20 +63,20 @@ const vitePressConfigs = {
       //导航栏
       { text: "首页", link: "/" },
 
-      {
-        text: "星空板",
-        items: [
-          { text: "星空板", link: "/星空板/" },
-          { text: "学习指南", link: "/星空板/学习指南/" },
-        ],
-      },
+      // {
+      //   text: "星空板",
+      //   items: [
+      //     { text: "星空板", link: "/星空板/" },
+      //     { text: "学习指南", link: "/星空板/学习指南/" },
+      //   ],
+      // },
 
       {
         text: "文档",
         items: [
-          { text: "index", link: "/文档/index/" },
-          { text: "YOLOv8训练与部署", link: "/文档/yolov8训练与部署/" },
-          { text: "Docker容器化", link: "/文档/docker/" },
+          { text: "index", link: "/文档/index" },
+          { text: "YOLOv8训练与部署", link: "/文档/yolov8训练与部署/yolov8.md" },
+          { text: "Docker容器化", link: "/文档/docker/docker.md" },
         ],
       },
 
@@ -84,8 +84,8 @@ const vitePressConfigs = {
         text: "code",
         items: [
           { text: "index", link: "/code/" },
-          { text: "Python编程", link: "/code/python/" },
-          { text: "C++编程", link: "/code/c++/" },
+          { text: "Python基础", link: "/code/python/pyhton基础" },
+          { text: "C++基础", link: "/code/c++/c++基础" },
         ],
       },
 
@@ -120,8 +120,8 @@ export default defineConfig(
       collapseDepth: 2,                 // 折叠深度
       
       // ============ [ 获取菜单标题 ] ============
-      useTitleFromFileHeading: true,     // 从文件标题获取
-      useTitleFromFrontmatter: true,     // 从frontmatter获取标题
+      useTitleFromFileHeading: false,    // 不从文件标题获取
+      useTitleFromFrontmatter: false,    // 不从frontmatter获取标题
       useFolderTitleFromIndexFile: true, // 从index.md获取文件夹标题
       
       // ============ [ 获取菜单链接 ] ============
@@ -155,8 +155,8 @@ export default defineConfig(
       collapseDepth: 2,                 // 折叠深度
       
       // ============ [ 获取菜单标题 ] ============
-      useTitleFromFileHeading: true,     // 从文件标题获取
-      useTitleFromFrontmatter: true,     // 从frontmatter获取标题
+      useTitleFromFileHeading: false,    // 不从文件标题获取
+      useTitleFromFrontmatter: false,    // 不从frontmatter获取标题
       useFolderTitleFromIndexFile: true, // 从index.md获取文件夹标题
       
       // ============ [ 获取菜单链接 ] ============
@@ -190,8 +190,8 @@ export default defineConfig(
       collapseDepth: 2,                 // 折叠深度
       
       // ============ [ 获取菜单标题 ] ============
-      useTitleFromFileHeading: true,     // 从文件标题获取
-      useTitleFromFrontmatter: true,     // 从frontmatter获取标题
+      useTitleFromFileHeading: false,    // 不从文件标题获取
+      useTitleFromFrontmatter: false,    // 不从frontmatter获取标题
       useFolderTitleFromIndexFile: true, // 从index.md获取文件夹标题
       
       // ============ [ 获取菜单链接 ] ============
@@ -225,8 +225,8 @@ export default defineConfig(
       collapseDepth: 2,                 // 折叠深度
       
       // ============ [ 获取菜单标题 ] ============
-      useTitleFromFileHeading: true,     // 从文件标题获取
-      useTitleFromFrontmatter: true,     // 从frontmatter获取标题
+      useTitleFromFileHeading: false,    // 不从文件标题获取
+      useTitleFromFrontmatter: false,    // 不从frontmatter获取标题
       useFolderTitleFromIndexFile: true, // 从index.md获取文件夹标题
       
       // ============ [ 获取菜单链接 ] ============
@@ -260,8 +260,8 @@ export default defineConfig(
       collapseDepth: 2,                 // 折叠深度
       
       // ============ [ 获取菜单标题 ] ============
-      useTitleFromFileHeading: true,     // 从文件标题获取
-      useTitleFromFrontmatter: true,     // 从frontmatter获取标题
+      useTitleFromFileHeading: false,    // 不从文件标题获取
+      useTitleFromFrontmatter: false,    // 不从frontmatter获取标题
       useFolderTitleFromIndexFile: true, // 从index.md获取文件夹标题
       
       // ============ [ 获取菜单链接 ] ============
