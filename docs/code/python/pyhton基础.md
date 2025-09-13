@@ -95,18 +95,6 @@ while b < 1000:
     a, b = b, a+b
 ```
 
-## 1.10. import 与 from...import
-
-在 python 用 import 或者 from...import 来导入相应的模块。
-
-将整个模块(somemodule)导入，格式为： import somemodule
-
-从某个模块中导入某个函数,格式为： from somemodule import somefunction
-
-从某个模块中导入多个函数,格式为： from somemodule import firstfunc, secondfunc, thirdfunc
-
-将某个模块中的全部函数导入，格式为： from somemodule import *，如果要实现不换行需要在变量末尾加上 end=""：
-
 ## 1.11. 编程方式
 
 ### 1.11.1. 交互式
@@ -192,7 +180,7 @@ Python3 的六个标准数据类型中：
 
 ### 2.3.1. 索引
 
-![img](/workspace/now/2025/wds/wds-blog/docs/code/python/assets/1730381154633-96ecd045-77ed-4044-9b8d-fc4aa5e496d0-1757660499143-1.png)
+![img](./pyhton基础.assets/1730381154633-96ecd045-77ed-4044-9b8d-fc4aa5e496d0.png)
 
 ### 2.3.2. 注意
 
@@ -235,7 +223,7 @@ Python3 的六个标准数据类型中：
 
 ### 2.5.1. 索引
 
-![img](/workspace/now/2025/wds/wds-blog/docs/code/python/assets/1730381380951-aee3d659-f609-413e-9c2e-6d689a588079-1757660499143-3.png)
+* 通列表一样
 
 ### 2.5.2. 注意
 
@@ -591,7 +579,41 @@ match test_num:
 
 # 5. 循环语句
 
+循环语句用于重复执行一段代码，直到满足某个条件为止。Python 中主要的循环语句有 `while` 和 `for`。本节先介绍 `while` 循环。
+
+---
+
 ## 5.1. while循环
+
+`while` 循环会在条件表达式为真（True）时重复执行循环体内的语句，直到条件变为假（False）时退出循环。
+
+语法格式：
+
+```python
+while 条件表达式:
+    循环体语句
+```
+
+> 注意：循环体必须缩进（通常为 4 个空格），这是 Python 语法的要求。
+
+执行流程：
+
+1. 判断条件表达式是否为真。
+2. 如果为真，执行循环体语句，然后回到步骤 1。
+3. 如果为假，退出循环，继续执行后续代码。
+
+```python
+#!/usr/bin/python3
+
+count = 0
+while count < 5:
+    print(count, "小于 5")
+    count += 1  # 等价于 count = count + 1
+
+print("循环结束，count =", count)
+```
+
+
 
 ## 5.2. while 循环使用 else 语句
 
@@ -657,10 +679,6 @@ else:
     <statements>
 ```
 
-![img](/workspace/now/2025/wds/wds-blog/docs/code/python/assets/1730385748545-223cbc17-6864-4a94-9b89-7a212d803795-1757660499143-5.png)
-
-### 例子
-
 ```python
 #!/usr/bin/python3
  
@@ -712,15 +730,22 @@ else:
 
 break 语句可以跳出 for 和 while 的循环体。如果你从 for 或 while 循环中终止，任何对应的循环 else 块将不执行。
 
-continue 语句被用来告诉 Python 跳过当前循环块中的剩余语句，然后继续进行下一轮循环。
+continue 语句被用来跳过当前循环块中的剩余语句，然后继续进行下一轮循环。
 
 ## 5.8. pass 语句
 
 Python pass是空语句，是为了保持程序结构的完整性，有些情况不能直接为空
 
-pass 不做任何事情，一般用做占位语句，如下实例
+pass 不做任何事情，一般用做占位语句。
 
-![img](/workspace/now/2025/wds/wds-blog/docs/code/python/assets/1743132912910-8a927424-3e5e-4aca-90da-66a2897c021e-1757660499143-7.png)
+```python
+def add(a, b):
+    pass
+
+
+def sub(a, b):
+    pass
+```
 
 # 6. 推导式（从一个数据序列构建一个新的数据序列）
 
@@ -1975,7 +2000,9 @@ list = [1,2,3]
 
 
 
-**—— 本文内容是学习 python3 菜鸟教程 以及 廖雪峰python3 的笔记，结合一些自己的理解整理而成。**
+
+
+**—— 本文内容是参考 python3 菜鸟教程 以及 廖雪峰python3 的笔记，结合一些自己的理解整理而成。**
 **原文链接：**
 
 [**https://liaoxuefeng.com/books/python/introduction/index.html**](https://liaoxuefeng.com/books/python/introduction/index.html) [**https://www.runoob.com/python3/python3-tutorial.html**](https://www.runoob.com/python3/python3-tutorial.html)
