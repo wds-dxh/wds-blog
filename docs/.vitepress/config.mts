@@ -84,7 +84,7 @@ const vitePressConfigs = {
         text: "code",
         items: [
           { text: "index", link: "/code/" },
-          { text: "Python基础", link: "/code/python/pyhton基础" },
+          { text: "Python基础", link: "/code/python/python基础" },
           { text: "C++基础", link: "/code/c++/c++基础" },
         ],
       },
