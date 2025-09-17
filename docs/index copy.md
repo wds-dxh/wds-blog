@@ -23,7 +23,7 @@
 
 <div style="padding: 15px; border: 2px solid #36BCF7; border-radius: 10px; background: linear-gradient(45deg, #f0f9ff, #e0f2fe);">
 <strong><a href="./文档/" style="text-decoration: none; color: #1976d2;">📚 技术文档</a></strong><br/>
-<small>YOLOv8深度学习、Docker容器化等技术文档和实战教程</small>
+<small>YOLOv8深度学习、Docker等技术文档和实战教程</small>
 </div>
 
 <div style="padding: 15px; border: 2px solid #4CAF50; border-radius: 10px; background: linear-gradient(45deg, #f1f8e9, #e8f5e8);">

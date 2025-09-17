@@ -76,7 +76,7 @@ const vitePressConfigs = {
         items: [
           { text: "index", link: "/文档/index" },
           { text: "YOLOv8训练与部署", link: "/文档/yolov8训练与部署/yolov8.md" },
-          { text: "Docker容器化", link: "/文档/docker/docker.md" },
+          { text: "Docker容器", link: "/文档/docker/docker.md" },
         ],
       },
 
