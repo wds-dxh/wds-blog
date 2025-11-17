@@ -414,9 +414,9 @@ result = "The number is {}".format(5)  # 正确，5被隐式处理为字符串
 
 | 函数                                                         | 描述                                                |
 | ------------------------------------------------------------ | --------------------------------------------------- |
-| [int(x [,base\])](https://www.runoob.com/python3/python-func-int.html) | 将x转换为一个整数                                   |
+| [int(x)](https://www.runoob.com/python3/python-func-int.html) | 将x转换为一个整数                                   |
 | [float(x)](https://www.runoob.com/python3/python-func-float.html) | 将x转换到一个浮点数                                 |
-| [complex(real [,imag\])](https://www.runoob.com/python3/python-func-complex.html) | 创建一个复数                                        |
+| [complex(real)](https://www.runoob.com/python3/python-func-complex.html) | 创建一个复数                                        |
 | [str(x)](https://www.runoob.com/python3/python-func-str.html) | 将对象 x 转换为字符串                               |
 | [repr(x)](https://www.runoob.com/python3/python-func-repr.html) | 将对象 x 转换为表达式字符串                         |
 | [eval(str)](https://www.runoob.com/python3/python-func-eval.html) | 用来计算在字符串中的有效Python表达式,并返回一个对象 |
@@ -708,7 +708,9 @@ else:
     # 循环结束后执行的代码
 ```
 
-## 5.6. range() 函数(注意是从0开始的）
+## 5.6. range() 函数
+
+* 注意是从0开始的
 
 - 遍历数字序列，可以使用内置 range() 函数。它会生成数列，例如:
 
@@ -744,7 +746,9 @@ def sub(a, b):
     pass
 ```
 
-# 6. 推导式（从一个数据序列构建一个新的数据序列）
+# 6. 推导式
+
+* **从一个数据序列构建一个新的数据序列**
 
 - Python 推导式是一种独特的数据处理方式，可以**从一个数据序列构建另一个新的数据序列的结构体**。
 
@@ -819,7 +823,7 @@ print(a)  # {'r', 'd'}
 
 ## 7.1. 迭代器
 
-- 迭代器有两个基本的方法：iter() 和 next()。
+- 迭代器有两个基本的方法：**iter() 和 next()**。
 - 迭代是 Python 最强大的功能之一，是访问集合元素的一种方式。
 - 字符串，列表或元组对象都可用于创建迭代器：
 
@@ -880,9 +884,9 @@ print(next(myiter))
 print(next(myiter))
 ```
 
-## 7.3. StopIteration（防止出现无限循环）给出一个条件，不满住就raise StopIteration
+## 7.3. StopIteration（防止出现无限循环）
 
-中断迭代，防止出现无限循环的情况
+* 给出一个条件，不满住就raise StopIteration ,中断迭代，防止出现无限循环的情况
 
 ### 7.3.1. 示例
 
@@ -911,9 +915,11 @@ for x in myiter:
 
 
 
-## 7.4. 生成器（yield ）（使用yield+next）-------在大模型对话中可以实现流式返回
+## 7.4. 生成器（yield ）
 
-- 生成器的函数里面要有yield 来实现暂停函数并返回数值。
+**（使用yield+next）-------在大模型对话中可以实现流式返回**
+
+- 生成器的函数里面要有yield 来实现**暂停函数并返回数值**。
 - yield 是一个关键字，用于定义生成器函数，生成器函数是一种特殊的函数，可以在迭代过程中逐步产生值，而不是一次性返回所有结果。
 - 当在生成器函数中使用 yield 语句时，函数的执行将会暂停，并将 yield 后面的表达式作为当前迭代的值返回。
 
@@ -1695,7 +1701,7 @@ print(any([True, False, False]))  # True
 # 转换为列表、元组、集合
 print(list("abc"))     # ['a', 'b', 'c']
 print(tuple([1, 2]))   # (1, 2)
-print(set([1, 1, 2]))  # {1, 2}
+print(set([1, 1, 2])	)  # {1, 2}
 
 print(float("3.14"))  # 3.14
 ```
@@ -2020,7 +2026,7 @@ if __name__ == "__main__":
 这是一个数学工具模块
 提供基本的数学运算函数
 """
-
+	
 def add(a, b):
     """返回两个数的和"""
     return a + b
