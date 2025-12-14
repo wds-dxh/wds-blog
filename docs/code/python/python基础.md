@@ -180,7 +180,14 @@ Python3 的六个标准数据类型中：
 
 ### 2.3.1. 索引
 
-![img](./pyhton基础.assets/1730381154633-96ecd045-77ed-4044-9b8d-fc4aa5e496d0.png)
+- 字符串可以被看作是字符的序列。 字符串的第一个字符索引为 0，第二个字符索引为 1，依此类推。 也可以从右往左索引，最后一个字符索引为 -1，倒数第二个字符索引为 -2，依此类推。
+```python
+#!/usr/bin/python3
+str = 'Runoob'
+print (str[0])     # 输出字符串第一个字符: R
+print (str[2:5])   # 输出字符串从第三个开始到第五个的字符: noo
+print (str[2:])    # 输出从第三个字符开始的字符串: noob
+```
 
 ### 2.3.2. 注意
 
@@ -218,7 +225,7 @@ Python3 的六个标准数据类型中：
 
 ## 2.5. list（列表）
 
-- 列表可以完成大多数集合类的数据结构实现。列表中元素的类型可以不相同，它支持数字，字符串甚至可以包含列表（所谓嵌套）。列表是写在方括号 [] 之间、用逗号分隔开的元素列表。	
+- 列表可以完成大多数集合类的数据结构实现。列表中元素的类型可以不相同，它支持数字，字符串甚至可以包含列表（所谓嵌套）。列表是写在方括号 [] 之间、用逗号分隔开的元素列表。 
 - 加号 + 是列表连接运算符，星号 * 是重复操作。（这个地方可以类比字符串）
 
 ### 2.5.1. 索引
@@ -414,9 +421,9 @@ result = "The number is {}".format(5)  # 正确，5被隐式处理为字符串
 
 | 函数                                                         | 描述                                                |
 | ------------------------------------------------------------ | --------------------------------------------------- |
-| [int(x [,base\])](https://www.runoob.com/python3/python-func-int.html) | 将x转换为一个整数                                   |
+| [int(x)](https://www.runoob.com/python3/python-func-int.html) | 将x转换为一个整数                                   |
 | [float(x)](https://www.runoob.com/python3/python-func-float.html) | 将x转换到一个浮点数                                 |
-| [complex(real [,imag\])](https://www.runoob.com/python3/python-func-complex.html) | 创建一个复数                                        |
+| [complex(real)](https://www.runoob.com/python3/python-func-complex.html) | 创建一个复数                                        |
 | [str(x)](https://www.runoob.com/python3/python-func-str.html) | 将对象 x 转换为字符串                               |
 | [repr(x)](https://www.runoob.com/python3/python-func-repr.html) | 将对象 x 转换为表达式字符串                         |
 | [eval(str)](https://www.runoob.com/python3/python-func-eval.html) | 用来计算在字符串中的有效Python表达式,并返回一个对象 |
@@ -677,9 +684,6 @@ for <variable> in <sequence>:
     <statements>
 else:
     <statements>
-```
-
-```python
 #!/usr/bin/python3
  
 word = 'runoob'
@@ -711,7 +715,9 @@ else:
     # 循环结束后执行的代码
 ```
 
-## 5.6. range() 函数(注意是从0开始的）
+## 5.6. range() 函数
+
+* 注意是从0开始的
 
 - 遍历数字序列，可以使用内置 range() 函数。它会生成数列，例如:
 
@@ -747,7 +753,9 @@ def sub(a, b):
     pass
 ```
 
-# 6. 推导式（从一个数据序列构建一个新的数据序列）
+# 6. 推导式
+
+* **从一个数据序列构建一个新的数据序列**
 
 - Python 推导式是一种独特的数据处理方式，可以**从一个数据序列构建另一个新的数据序列的结构体**。
 
@@ -822,7 +830,7 @@ print(a)  # {'r', 'd'}
 
 ## 7.1. 迭代器
 
-- 迭代器有两个基本的方法：iter() 和 next()。
+- 迭代器有两个基本的方法：**iter() 和 next()**。
 - 迭代是 Python 最强大的功能之一，是访问集合元素的一种方式。
 - 字符串，列表或元组对象都可用于创建迭代器：
 
@@ -883,9 +891,9 @@ print(next(myiter))
 print(next(myiter))
 ```
 
-## 7.3. StopIteration（防止出现无限循环）给出一个条件，不满住就raise StopIteration
+## 7.3. StopIteration（防止出现无限循环）
 
-中断迭代，防止出现无限循环的情况
+* 给出一个条件，不满住就raise StopIteration ,中断迭代，防止出现无限循环的情况
 
 ### 7.3.1. 示例
 
@@ -914,9 +922,11 @@ for x in myiter:
 
 
 
-## 7.4. 生成器（yield ）（使用yield+next）-------在大模型对话中可以实现流式返回
+## 7.4. 生成器（yield ）
 
-- 生成器的函数里面要有yield 来实现暂停函数并返回数值。
+**（使用yield+next）-------在大模型对话中可以实现流式返回**
+
+- 生成器的函数里面要有yield 来实现**暂停函数并返回数值**。
 - yield 是一个关键字，用于定义生成器函数，生成器函数是一种特殊的函数，可以在迭代过程中逐步产生值，而不是一次性返回所有结果。
 - 当在生成器函数中使用 yield 语句时，函数的执行将会暂停，并将 yield 后面的表达式作为当前迭代的值返回。
 
@@ -941,283 +951,856 @@ for value in generator:
     print(value)  # 输出: 2 1
 ```
 
-# 8. python3函数
+# 8. Python3 函数
 
-## 8.1. 函数是什么
+## 8.1. 函数基础
 
-函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。
+### 8.1.1. 什么是函数
 
-函数能提高应用的模块性，和代码的重复利用率。你已经知道Python提供了许多内建函数，比如print()。但你也可以自己创建函数，这被叫做用户自定义函数。
+函数是组织好的、可重复使用的、用来实现单一或相关联功能的代码段。
 
-## 8.2. 定义一个函数
+**函数的优点：**
 
-你可以定义一个由自己想要功能的函数，以下是简单的规则：
+- 提高代码的**模块性**和**可维护性**
+- 提高代码的**重复利用率**，避免重复编写相同代码
+- 提高代码的**可读性**，使程序结构更清晰
+- 方便**测试和调试**
 
-- 函数代码块以 def 关键词开头，后接函数标识符名称和圆括号 ()。
-- 任何传入参数和自变量必须放在圆括号中间，圆括号之间可以用于定义参数。
-- 函数的第一行语句可以选择性地使用文档字符串—用于存放函数说明。
-- 函数内容以冒号 : 起始，并且缩进。
-- return [表达式] 结束函数，选择性地返回一个值给调用方，不带表达式的 return 相当于返回 None。
+Python 提供了许多内建函数（如 `print()`、`len()`、`type()` 等），同时也支持自定义函数。
+
+### 8.1.2. 函数定义
+
+**基本语法：**
 
 ```python
-def 函数名（参数列表）:
+def 函数名(参数列表):
+    """文档字符串（可选）"""
     函数体
+    return 返回值  # 可选
 ```
 
-## 8.3. 函数调用
+**定义规则：**
 
-示例
+1. 使用 `def` 关键字开头，后接函数名和圆括号 `()`
+2. 函数名遵循标识符命名规则（字母、数字、下划线，不能以数字开头）
+3. 参数列表放在圆括号中，多个参数用逗号分隔
+4. 函数的第一行可以使用文档字符串（docstring）描述函数功能
+5. 函数体以冒号 `:` 开始，并且需要缩进
+6. `return` 语句用于返回值，可选；不带 `return` 或 `return` 后无表达式则返回 `None`
+
+**示例：**
 
 ```python
-#!/usr/bin/python3
- 
+def greet(name):
+    """向指定的人打招呼"""
+    message = f"你好, {name}!"
+    return message
+
+def calculate_area(length, width):
+    """计算矩形面积"""
+    area = length * width
+    return area
+
+# 无返回值的函数
+def print_info(text):
+    """打印信息"""
+    print(text)
+    # 没有 return 语句，默认返回 None
+```
+
+### 8.1.3. 函数调用
+
+定义函数后，通过函数名加括号来调用函数，需要传入对应的参数。
+
+```python
 # 定义函数
-def printme( str ):
-   # 打印任何传入的字符串
-   print (str)
-   return
- 
+def greet(name):
+    """向指定的人打招呼"""
+    return f"你好, {name}!"
+
 # 调用函数
-printme("我要调用用户自定义函数!")
-printme("再次调用同一函数")
+message = greet("张三")
+print(message)  # 输出: 你好, 张三!
+
+# 多次调用
+print(greet("李四"))  # 输出: 你好, 李四!
+print(greet("王五"))  # 输出: 你好, 王五!
 ```
 
-## 8.4. 参数传递
+### 8.1.4. 返回值
 
-参数可以是可变对象（如列表或字典）或不可变对象（如数字、字符串或元组）
-
-- 在 python 中，类型属于对象，对象有不同**类型**的区分，变量是没有类型的：
+**单个返回值：**
 
 ```python
-a=[1,2,3]
+def add(a, b):
+    """返回两个数的和"""
+    return a + b
 
-a="Runoob"
+result = add(3, 5)
+print(result)  # 输出: 8
 ```
 
-以上代码中，[1,2,3] 是 List 类型，"Runoob" 是 String 类型，而变量 a 是没有类型，它仅仅是一个对象的引用（一个指针），可以是指向 List 类型对象，也可以是指向 String 类型对象。
-
-### 8.4.1. 可更改(mutable)与不可更改(immutable)对象
-
-在 python 中，strings, tuples, 和 numbers 是不可更改的对象，而 list,dict 等则是可以修改的对象。
-
-- 不可变类型：变量赋值 a=5 后再赋值 a=10，这里实际是新生成一个 int 值对象 10，再让 a 指向它，而 5 被丢弃，不是改变 a 的值，相当于新生成了 a。
-- 可变类型：变量赋值 la=[1,2,3,4] 后再赋值 la[2]=5 则是将 list la 的第三个元素值更改，本身la没有动，只是其内部的一部分值被修改了。
-
-python 函数的参数传递：
-
-- 不可变类型：类似 C++ 的值传递，如整数、字符串、元组。如 fun(a)，传递的只是 a 的值，没有影响 a 对象本身。如果在 fun(a) 内部修改 a 的值，则是新生成一个 a 的对象。
-- 可变类型：类似 C++ 的引用传递，如 列表，字典。如 fun(la)，则是将 la 真正的传过去，修改后 fun 外部的 la 也会受影响
-
-python 中一切都是对象，严格意义我们不能说值传递还是引用传递，我们应该说传不可变对象和传可变对象。
-
-## 8.5. python 传不可变对象实例
-
-示例
+**多个返回值（返回元组）：**
 
 ```python
-def change(a):
-    print(id(a))   # 指向的是同一个对象
-    a=10
-    print(id(a))   # 一个新对象
- 
-a=1
-print(id(a))
-change(a)
+def get_user_info():
+    """返回用户信息"""
+    name = "张三"
+    age = 25
+    city = "北京"
+    return name, age, city  # 实际返回一个元组
+
+# 接收返回值
+name, age, city = get_user_info()
+print(f"{name}, {age}岁, 来自{city}")
+
+# 也可以作为元组接收
+info = get_user_info()
+print(info)  # 输出: ('张三', 25, '北京')
 ```
 
-## 8.6. 传可变对象实例
-
-可变对象在函数里修改了参数，那么在调用这个函数的函数里，原始的参数也被改变了。例如：
+**无返回值：**
 
 ```python
-#!/usr/bin/python3
- 
-# 可写函数说明
-def changeme( mylist ):
-   "修改传入的列表"
-   mylist.append([1,2,3,4])
-   print ("函数内取值: ", mylist)
-   return
- 
-# 调用changeme函数
-mylist = [10,20,30]
-changeme( mylist )
-print ("函数外取值: ", mylist)
+def print_message(msg):
+    """打印消息，无返回值"""
+    print(msg)
+    # 没有return，默认返回 None
+
+result = print_message("Hello")
+print(result)  # 输出: None
 ```
 
-## 8.7. 参数
+## 8.2. 参数传递机制
 
-以下是调用函数时可使用的正式参数类型：
+### 8.2.1. Python 中的对象和变量
 
-- 必需参数
-- 关键字参数
-- 默认参数
-- 不定长参数
+在理解参数传递之前，需要先理解 Python 中的对象和变量：
 
-### 8.7.1. 必需参数
-
-必需参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。
-
-调用 printme() 函数，你必须传入一个参数，不然会出现语法错误：
+- 在 Python 中，**类型属于对象**，而**变量没有类型**
+- 变量只是对象的引用（类似指针），可以指向不同类型的对象
 
 ```python
-#!/usr/bin/python3
- 
-#可写函数说明
-def printme( str ):
-   "打印任何传入的字符串"
-   print (str)
-   return
- 
-# 调用 printme 函数，不加参数会报错
-printme()
+a = [1, 2, 3]   # a 指向一个 List 对象
+a = "Hello"     # a 现在指向一个 String 对象
 ```
 
-### 8.7.2. 关键字参数(可以不指定参数传递的顺序）默认参数
+### 8.2.2. 可变对象与不可变对象
 
-关键字参数和函数调用关系紧密，函数调用使用关键字参数来确定传入的参数值。
+Python 中的对象分为两类：
 
-示例:
+| 类型           | 对象类型                                            | 特点                               |
+| -------------- | --------------------------------------------------- | ---------------------------------- |
+| **不可变对象** | `int`、`float`、`str`、`tuple`、`bool`、`frozenset` | 对象内容不可修改，修改会创建新对象 |
+| **可变对象**   | `list`、`dict`、`set`、自定义类对象                 | 对象内容可以修改，对象地址不变     |
+
+**不可变对象示例：**
 
 ```python
-#!/usr/bin/python3
- 
-#可写函数说明
-def printme( str ):
-   "打印任何传入的字符串"
-   print (str)
-   return
- 
-#调用printme函数
-printme( str = "菜鸟教程")
+a = 5
+print(id(a))  # 输出内存地址，例如：140234567890
+
+a = 10        # 创建新对象，a 指向新地址
+print(id(a))  # 输出不同的内存地址
 ```
 
-### 8.7.3. 默认参数
-
-调用函数时，如果没有传递参数，则会使用默认参数
-
-### 8.7.4. 不定长参数
-
-需要一个函数能处理比当初声明时更多的参数。这些参数叫做不定长参数，和上述 2 种参数不同，声明时不会命名。基本语法如下：
+**可变对象示例：**
 
 ```python
-def functionname([formal_args,] *var_args_tuple ):
-   "函数_文档字符串"
-   function_suite
-   return [expression]
+lst = [1, 2, 3]
+print(id(lst))   # 输出内存地址
+
+lst[0] = 100     # 修改列表内容
+print(id(lst))   # 地址不变，还是同一个对象
 ```
 
-#### 8.7.4.1. 加了星号 * 的参数会以元组(tuple)的形式导入，存放所有未命名的变量参数。---直接使用序号访问元组
+### 8.2.3. 参数传递方式
+
+Python 采用**"传对象引用"**的方式（既不是值传递，也不是引用传递）：
+
+- 传递的是对象的引用（地址）
+- 函数内部得到的是原对象的引用
+- 是否影响原对象取决于对象是否可变
+
+**传递不可变对象（类似值传递）：**
 
 ```python
-#!/usr/bin/python3
-  
-# 可写函数说明
-def printinfo( arg1, *vartuple ):
-   "打印任何传入的参数"
-   print ("输出: ")
-   print (arg1)
-   print (vartuple)
- 
-# 调用printinfo 函数
-printinfo( 70, 60, 50 )
+def modify_number(x):
+    print(f"函数内部修改前: x = {x}, id = {id(x)}")
+    x = 100  # 创建新对象，x 指向新地址
+    print(f"函数内部修改后: x = {x}, id = {id(x)}")
+
+a = 10
+print(f"函数调用前: a = {a}, id = {id(a)}")
+modify_number(a)
+print(f"函数调用后: a = {a}, id = {id(a)}")  # a 不变
 ```
 
-#### 8.7.4.2. 加了两个星号 ** 的参数会以字典的形式导入。
+**输出：**
+
+```
+函数调用前: a = 10, id = 140234567890
+函数内部修改前: x = 10, id = 140234567890
+函数内部修改后: x = 100, id = 140234568000
+函数调用后: a = 10, id = 140234567890
+```
+
+**传递可变对象（类似引用传递）：**
 
 ```python
-#!/usr/bin/python3
-  
-# 可写函数说明
-def printinfo( arg1, **vardict ):
-   "打印任何传入的参数"
-   print ("输出: ")
-   print (arg1)
-   print (vardict)
- 
-# 调用printinfo 函数
-printinfo(1, a=2,b=3)
+def modify_list(lst):
+    print(f"函数内部修改前: lst = {lst}, id = {id(lst)}")
+    lst.append(4)  # 修改原对象
+    print(f"函数内部修改后: lst = {lst}, id = {id(lst)}")
+
+my_list = [1, 2, 3]
+print(f"函数调用前: my_list = {my_list}, id = {id(my_list)}")
+modify_list(my_list)
+print(f"函数调用后: my_list = {my_list}, id = {id(my_list)}")  # my_list 被修改
 ```
 
+**输出：**
 
+```
+函数调用前: my_list = [1, 2, 3], id = 140234567890
+函数内部修改前: lst = [1, 2, 3], id = 140234567890
+函数内部修改后: lst = [1, 2, 3, 4], id = 140234567890
+函数调用后: my_list = [1, 2, 3, 4], id = 140234567890
+```
 
-#### 8.7.4.3. 声明函数时，参数中星号 * 可以单独出现，例如:
+### 8.2.4. 避免修改可变参数
+
+如果不想在函数内部修改原对象，可以使用拷贝：
+
+**浅拷贝：**
 
 ```python
-def f(a,b,*,c):
-    return a+b+c
+def modify_list_safely(lst):
+    local_lst = lst.copy()  # 或 lst[:]
+    local_lst.append(4)
+    return local_lst
+
+my_list = [1, 2, 3]
+new_list = modify_list_safely(my_list)
+print(f"原列表: {my_list}")    # 输出: [1, 2, 3]
+print(f"新列表: {new_list}")   # 输出: [1, 2, 3, 4]
 ```
 
-#### 8.7.4.4. 如果单独出现星号 *，则星号 * 后的参数必须用关键字传入：
+**深拷贝（处理嵌套结构）：**
 
 ```python
->>> def f(a,b,*,c):
-...     return a+b+c
-... 
->>> f(1,2,3)   # 报错
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: f() takes 2 positional arguments but 3 were given
->>> f(1,2,c=3) # 正常
-6
->>>
+import copy
+
+def modify_nested_list(lst):
+    local_lst = copy.deepcopy(lst)
+    local_lst[0][0] = 999
+    return local_lst
+
+my_list = [[1, 2], [3, 4]]
+new_list = modify_nested_list(my_list)
+print(f"原列表: {my_list}")    # 输出: [[1, 2], [3, 4]]
+print(f"新列表: {new_list}")   # 输出: [[999, 2], [3, 4]]
 ```
 
-## 8.8. return 语句
+## 8.3. 函数参数类型
+
+Python 函数支持多种参数类型，可以灵活组合使用。
+
+### 8.3.1. 位置参数（必需参数）
+
+位置参数是最常见的参数类型，调用时必须按照定义的顺序传递，且数量必须匹配。
 
 ```python
-#!/usr/bin/python3
- 
-# 可写函数说明
-def sum( arg1, arg2 ):
-   # 返回2个参数的和."
-   total = arg1 + arg2
-   print ("函数内 : ", total)
-   return total
- 
-# 调用sum函数
-total = sum( 10, 20 )
-print ("函数外 : ", total)
+def greet(name, age):
+    """必须传入两个参数，且顺序要对应"""
+    print(f"{name} 今年 {age} 岁")
+
+greet("张三", 25)      # 正确
+greet(25, "张三")      # 错误：参数顺序不对
+# greet("张三")        # 错误：缺少参数
+# greet("张三", 25, 30) # 错误：参数过多
 ```
 
-## 8.9. 强制位置参数(使用/实现）
+### 8.3.2. 关键字参数
 
-Python3.8 新增了一个函数形参语法 / 用来指明函数形参必须使用指定位置参数，不能使用关键字参数的形式。
-
-在以下的例子中，形参 a 和 b 必须使用指定位置参数，c 或 d 可以是位置形参或关键字形参，而 e 和 f 要求为关键字形参:
+使用关键字参数调用函数时，可以不按照参数定义的顺序传递。
 
 ```python
-def f(a, b, /, c, d, *, e, f):
-    print(a, b, c, d, e, f)
+def introduce(name, age, city):
+    print(f"我是{name}，{age}岁，来自{city}")
+
+# 使用关键字参数，顺序可以任意
+introduce(age=25, city="北京", name="张三")
+introduce(name="李四", city="上海", age=30)
+
+# 混合使用位置参数和关键字参数（位置参数必须在前）
+introduce("王五", age=28, city="广州")
 ```
 
-## 8.10. 匿名函数lambda
+**注意事项：**
 
-Python 使用 lambda 来创建匿名函数。
-
-所谓匿名，意即不再使用 def 语句这样标准的形式定义一个函数。
-
-- lambda 只是一个表达式，函数体比 def 简单很多。
-- lambda 的主体是一个表达式，而不是一个代码块。仅仅能在 lambda 表达式中封装有限的逻辑进去。
-- lambda 函数拥有自己的命名空间，且不能访问自己参数列表之外或全局命名空间里的参数。
-- 虽然 lambda 函数看起来只能写一行，却不等同于 C 或 C++ 的内联函数，内联函数的目的是调用小函数时不占用栈内存从而减少函数调用的开销，提高代码的执行速度。
-
-### 8.10.1. 语法
+- 关键字参数必须在位置参数之后
+- 同一个参数不能同时用位置和关键字方式传递
 
 ```python
-x = lambda [arg1 [,arg2,.....argn]]:expression
+# 错误示例
+# introduce(name="张三", 25, "北京")  # 关键字参数在位置参数前
+# introduce("张三", 25, name="李四")  # name 被传递两次
 ```
 
-返回的x就是函数对象！ 
+### 8.3.3. 默认参数
+
+为参数设置默认值，调用时可以不传递该参数。
 
 ```python
-x = lambda a, b, c : a + b + c
-print(x(5, 6, 2))
+def greet(name, greeting="你好"):
+    """greeting 有默认值，可以不传"""
+    print(f"{greeting}, {name}!")
+
+greet("张三")              # 使用默认值：你好, 张三!
+greet("李四", "早上好")     # 使用指定值：早上好, 李四!
+greet("王五", greeting="晚上好")  # 使用关键字参数
 ```
+
+**注意事项：**
+
+1. **默认参数必须在位置参数之后**
+2. **默认参数不要使用可变对象**（重要！）
+
+```python
+# ❌ 错误示例：使用可变对象作为默认参数
+def add_item(item, lst=[]):
+    lst.append(item)
+    return lst
+
+print(add_item("a"))  # ['a']
+print(add_item("b"))  # ['a', 'b'] ← 问题：默认列表被复用了！
+
+# ✅ 正确做法
+def add_item(item, lst=None):
+    if lst is None:
+        lst = []
+    lst.append(item)
+    return lst
+
+print(add_item("a"))  # ['a']
+print(add_item("b"))  # ['b'] ← 正确
+```
+
+### 8.3.4. 可变参数（*args）
+
+使用 `*args` 接收任意数量的位置参数，参数以**元组**形式传入。
+
+```python
+def sum_numbers(*numbers):
+    """接收任意数量的数字参数"""
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+
+print(sum_numbers(1, 2, 3))           # 6
+print(sum_numbers(1, 2, 3, 4, 5))     # 15
+print(sum_numbers())                   # 0
+
+# 混合使用
+def greet(greeting, *names):
+    """第一个参数是问候语，后面接任意数量的名字"""
+    for name in names:
+        print(f"{greeting}, {name}!")
+
+greet("你好", "张三", "李四", "王五")
+```
+
+**传递列表给 *args：**
+
+```python
+def print_items(*items):
+    for item in items:
+        print(item)
+
+my_list = [1, 2, 3, 4]
+print_items(*my_list)  # 使用 * 解包列表
+```
+
+### 8.3.5. 关键字可变参数（**kwargs）
+
+使用 `**kwargs` 接收任意数量的关键字参数，参数以**字典**形式传入。
+
+```python
+def print_info(**info):
+    """接收任意数量的关键字参数"""
+    for key, value in info.items():
+        print(f"{key}: {value}")
+
+print_info(name="张三", age=25, city="北京")
+# 输出:
+# name: 张三
+# age: 25
+# city: 北京
+
+# 混合使用
+def create_user(username, **user_info):
+    print(f"用户名: {username}")
+    for key, value in user_info.items():
+        print(f"{key}: {value}")
+
+create_user("zhangsan", age=25, email="zhangsan@example.com", city="北京")
+```
+
+**传递字典给 **kwargs：**
+
+```python
+def print_settings(**settings):
+    for key, value in settings.items():
+        print(f"{key} = {value}")
+
+config = {"host": "localhost", "port": 8080, "debug": True}
+print_settings(**config)  # 使用 ** 解包字典
+```
+
+### 8.3.6. 参数定义顺序
+
+函数定义时，参数必须按照以下顺序排列：
+
+```python
+def function(
+    pos1, pos2,           # 1. 位置参数
+    *args,                # 2. 可变位置参数
+    key1=default1,        # 3. 默认参数（关键字参数）
+    **kwargs              # 4. 可变关键字参数
+):
+    pass
+```
+
+**完整示例：**
+
+```python
+def complex_function(a, b, *args, x=10, y=20, **kwargs):
+    print(f"位置参数: a={a}, b={b}")
+    print(f"可变位置参数 *args: {args}")
+    print(f"默认参数: x={x}, y={y}")
+    print(f"可变关键字参数 **kwargs: {kwargs}")
+
+complex_function(1, 2, 3, 4, 5, x=100, y=200, name="张三", age=25)
+# 输出:
+# 位置参数: a=1, b=2
+# 可变位置参数 *args: (3, 4, 5)
+# 默认参数: x=100, y=200
+# 可变关键字参数 **kwargs: {'name': '张三', 'age': 25}
+```
+
+### 8.3.7. 强制位置参数（/）
+
+Python 3.8+ 支持使用 `/` 指定某些参数必须使用位置方式传递。
+
+```python
+def divide(a, b, /):
+    """a 和 b 必须用位置参数传递"""
+    return a / b
+
+print(divide(10, 2))      # ✅ 正确
+# print(divide(a=10, b=2)) # ❌ 错误：不能使用关键字参数
+```
+
+### 8.3.8. 强制关键字参数（*）
+
+使用单独的 `*` 指定后面的参数必须使用关键字方式传递。
+
+```python
+def greet(name, *, greeting="你好", punctuation="!"):
+    """greeting 和 punctuation 必须用关键字参数传递"""
+    print(f"{greeting}, {name}{punctuation}")
+
+greet("张三")                                    # ✅ 正确
+greet("李四", greeting="早上好")                  # ✅ 正确
+greet("王五", greeting="晚上好", punctuation="。") # ✅ 正确
+# greet("赵六", "下午好")                         # ❌ 错误
+```
+
+### 8.3.9. 完整的参数顺序
+
+```python
+def full_example(
+    pos_only1, pos_only2, /,        # 1. 仅限位置参数
+    pos_or_kw1, pos_or_kw2,         # 2. 位置或关键字参数
+    *args,                           # 3. 可变位置参数
+    kw_only1, kw_only2=None,        # 4. 仅限关键字参数
+    **kwargs                         # 5. 可变关键字参数
+):
+    pass
+
+# 调用示例
+full_example(
+    1, 2,                    # pos_only1, pos_only2（必须位置）
+    3, 4,                    # pos_or_kw1, pos_or_kw2（位置或关键字）
+    5, 6,                    # *args
+    kw_only1=7,             # kw_only1（必须关键字）
+    kw_only2=8,             # kw_only2（必须关键字）
+    extra1=9, extra2=10     # **kwargs
+)
+```
+
+## 8.4. 匿名函数（Lambda）
+
+### 8.4.1. 什么是 Lambda 函数
+
+Lambda 函数是一种简洁的、匿名的、单行的函数定义方式。
+
+**特点：**
+
+- 使用 `lambda` 关键字定义，不需要 `def`
+- 没有函数名（匿名）
+- 只能包含一个表达式，不能有多条语句
+- 表达式的结果自动作为返回值
+- 拥有自己的命名空间，但不能访问参数列表之外的变量
+
+**语法：**
+
+```python
+lambda 参数1, 参数2, ... : 表达式
+```
+
+### 8.4.2. 基本用法
+
+**普通函数 vs Lambda 函数：**
+
+```python
+# 普通函数
+def add(x, y):
+    return x + y
+
+# Lambda 函数
+add_lambda = lambda x, y: x + y
+
+print(add(3, 5))          # 8
+print(add_lambda(3, 5))   # 8
+```
+
+**多种参数形式：**
+
+```python
+# 单个参数
+square = lambda x: x ** 2
+print(square(5))  # 25
+
+# 多个参数
+multiply = lambda x, y, z: x * y * z
+print(multiply(2, 3, 4))  # 24
+
+# 无参数
+greet = lambda: "Hello, World!"
+print(greet())  # Hello, World!
+
+# 默认参数
+power = lambda x, n=2: x ** n
+print(power(5))      # 25 (5^2)
+print(power(5, 3))   # 125 (5^3)
+```
+
+### 8.4.3. 常见应用场景
+
+**1. 与内置函数配合使用**
+
+**sorted() 排序：**
+
+```python
+# 按字符串长度排序
+words = ["apple", "banana", "kiwi", "orange"]
+sorted_words = sorted(words, key=lambda x: len(x))
+print(sorted_words)  # ['kiwi', 'apple', 'banana', 'orange']
+
+# 按元组第二个元素排序
+students = [("张三", 85), ("李四", 92), ("王五", 78)]
+sorted_students = sorted(students, key=lambda x: x[1], reverse=True)
+print(sorted_students)  # [('李四', 92), ('张三', 85), ('王五', 78)]
+
+# 按字典的值排序
+data = {"apple": 3, "banana": 1, "orange": 2}
+sorted_items = sorted(data.items(), key=lambda x: x[1])
+print(sorted_items)  # [('banana', 1), ('orange', 2), ('apple', 3)]
+```
+
+**map() 映射：**
+
+```python
+# 将列表中每个元素平方
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x ** 2, numbers))
+print(squared)  # [1, 4, 9, 16, 25]
+
+# 将两个列表对应元素相加
+a = [1, 2, 3, 4]
+b = [10, 20, 30, 40]
+result = list(map(lambda x, y: x + y, a, b))
+print(result)  # [11, 22, 33, 44]
+```
+
+**filter() 过滤：**
+
+```python
+# 过滤出偶数
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)  # [2, 4, 6, 8, 10]
+
+# 过滤出长度大于 5 的字符串
+words = ["hello", "world", "python", "programming"]
+long_words = list(filter(lambda x: len(x) > 5, words))
+print(long_words)  # ['python', 'programming']
+```
+
+**reduce() 累积：**
+
+```python
+from functools import reduce
+
+# 计算列表所有元素的乘积
+numbers = [1, 2, 3, 4, 5]
+product = reduce(lambda x, y: x * y, numbers)
+print(product)  # 120
+
+# 找出列表中的最大值
+numbers = [3, 7, 2, 9, 4]
+maximum = reduce(lambda x, y: x if x > y else y, numbers)
+print(maximum)  # 9
+```
+
+**2. 条件表达式：**
+
+```python
+# 判断奇偶
+check_even = lambda x: "偶数" if x % 2 == 0 else "奇数"
+print(check_even(4))  # 偶数
+print(check_even(7))  # 奇数
+
+# 找出两个数中的较大值
+max_num = lambda a, b: a if a > b else b
+print(max_num(10, 20))  # 20
+```
+
+**3. 作为函数返回值：**
+
+```python
+def make_multiplier(n):
+    """返回一个乘以 n 的函数"""
+    return lambda x: x * n
+
+multiply_by_2 = make_multiplier(2)
+multiply_by_5 = make_multiplier(5)
+
+print(multiply_by_2(10))  # 20
+print(multiply_by_5(10))  # 50
+```
+
+**4. 在数据结构中使用：**
+
+```python
+# 函数字典
+operations = {
+    "add": lambda x, y: x + y,
+    "subtract": lambda x, y: x - y,
+    "multiply": lambda x, y: x * y,
+    "divide": lambda x, y: x / y if y != 0 else "除数不能为0"
+}
+
+print(operations["add"](10, 5))       # 15
+print(operations["multiply"](10, 5))  # 50
+
+# 函数列表
+functions = [
+    lambda x: x + 1,
+    lambda x: x * 2,
+    lambda x: x ** 2
+]
+
+num = 5
+for func in functions:
+    print(func(num))  # 6, 10, 25
+```
+
+### 8.4.4. Lambda vs 普通函数
+
+| 特性       | Lambda 函数          | 普通函数           |
+| ---------- | -------------------- | ------------------ |
+| 定义方式   | `lambda` 关键字      | `def` 关键字       |
+| 函数名     | 匿名（可赋值给变量） | 必须有名字         |
+| 函数体     | 只能有一个表达式     | 可以有多条语句     |
+| 返回值     | 表达式结果自动返回   | 需要 `return` 语句 |
+| 文档字符串 | 不支持               | 支持               |
+| 类型注解   | 有限支持             | 完全支持           |
+| 适用场景   | 简单的单行操作       | 复杂逻辑           |
+
+**使用建议：**
+
+- ✅ 简单操作（如排序、过滤）使用 Lambda
+- ✅ 需要复用但很简单的逻辑使用 Lambda
+- ❌ 复杂逻辑、多行代码使用普通函数
+- ❌ 需要文档说明的函数使用普通函数
+
+### 8.4.5. Lambda 的限制
+
+Lambda 函数有一些限制，不适合复杂场景：
+
+```python
+# ❌ 不能使用多条语句
+# result = lambda x: (print(x), x + 1)  # 错误
+
+# ❌ 不能使用复杂的控制流
+# check = lambda x: if x > 0: return x  # 错误
+
+# ✅ 可以使用条件表达式（三元运算符）
+check = lambda x: x if x > 0 else 0
+
+# ✅ 可以使用简单的表达式
+process = lambda x: x.strip().lower() if isinstance(x, str) else x
+```
+
+## 8.5. 常用内置函数
+
+Python 提供了许多实用的内置函数：
+
+### 8.7.1. 数学相关
+
+```python
+# 绝对值
+print(abs(-10))  # 10
+
+# 四舍五入
+print(round(3.14159, 2))  # 3.14
+
+# 幂运算
+print(pow(2, 3))  # 8
+
+# 最大值、最小值
+print(max(1, 5, 3))      # 5
+print(min([1, 5, 3]))    # 1
+
+# 求和
+print(sum([1, 2, 3, 4]))  # 10
+```
+
+### 8.7.2. 序列操作
+
+```python
+# 长度
+print(len([1, 2, 3]))  # 3
+
+# 枚举
+for index, value in enumerate(['a', 'b', 'c']):
+    print(f"{index}: {value}")
+
+# 打包
+pairs = zip([1, 2, 3], ['a', 'b', 'c'])
+print(list(pairs))  # [(1, 'a'), (2, 'b'), (3, 'c')]
+
+# 反转
+print(list(reversed([1, 2, 3])))  # [3, 2, 1]
+
+# 全部/任意
+print(all([True, True, False]))  # False
+print(any([True, False, False]))  # True
+```
+
+### 8.7.3. 类型转换
+
+```python
+# 转换为列表、元组、集合
+print(list("abc"))     # ['a', 'b', 'c']
+print(tuple([1, 2]))   # (1, 2)
+print(set([1, 1, 2])	)  # {1, 2}
+
+print(float("3.14"))  # 3.14
+```
+
+## 8.6. 最佳实践
+
+### 8.6.1. 函数设计原则
+
+1. **单一职责**：一个函数只做一件事
+2. **命名清晰**：使用动词或动词短语命名
+3. **参数合理**：参数不宜过多（建议 ≤ 5 个）
+4. **添加文档**：使用 docstring 说明函数功能
+5. **返回一致**：返回值类型应保持一致
+
+```python
+# ✅ 好的函数设计
+def calculate_total_price(items: List[Dict], tax_rate: float = 0.1) -> float:
+    """
+    计算商品总价（含税）
+    
+    Args:
+        items: 商品列表，每个商品是包含 'price' 和 'quantity' 的字典
+        tax_rate: 税率，默认 10%
+    
+    Returns:
+        float: 总价（含税）
+    
+    Example:
+        >>> items = [{'price': 10, 'quantity': 2}, {'price': 5, 'quantity': 3}]
+        >>> calculate_total_price(items)
+        38.5
+    """
+    subtotal = sum(item['price'] * item['quantity'] for item in items)
+    return subtotal * (1 + tax_rate)
+
+# ❌ 不好的函数设计
+def calc(a, b, c, d, e):  # 参数过多，命名不清晰
+    # 没有文档说明
+    return a * b + c - d / e  # 功能不明确
+```
+
+### 8.6.2. 常见错误与解决
+
+```python
+# ❌ 错误：使用可变对象作为默认参数
+def append_to(element, target=[]):
+    target.append(element)
+    return target
+
+# ✅ 正确：使用 None 作为默认值
+def append_to(element, target=None):
+    if target is None:
+        target = []
+    target.append(element)
+    return target
+
+# ❌ 错误：在循环中创建闭包
+functions = []
+for i in range(3):
+    functions.append(lambda: i)
+
+for f in functions:
+    print(f())  # 都输出 2
+
+# ✅ 正确：使用默认参数
+functions = []
+for i in range(3):
+    functions.append(lambda x=i: x)
+
+for f in functions:
+    print(f())  # 输出 0, 1, 2
+```
+
+## 8.7. 小结
+
+本章介绍了 Python 函数的核心知识：
+
+- ✅ **函数基础**：定义、调用、返回值
+- ✅ **参数传递**：理解可变/不可变对象的传递机制
+- ✅ **参数类型**：位置参数、关键字参数、默认参数、可变参数
+- ✅ **Lambda 函数**：简洁的匿名函数定义
+- ✅ **最佳实践**：函数设计原则和常见错误
+
+**下一步学习：**
+
+- 学习面向对象编程
+- 了解函数式编程概念
+- 深入学习装饰器（见进阶章节）
 
 # 9. 面向对象：
 
-[2 面向对象](https://www.yuque.com/wds2dxh/gt6gw7/sfgvo723z5dud33k)
+[2 面向对象](./进阶/01 OOP.md)
 
 # 10. 模块
 
@@ -1373,6 +1956,8 @@ from .advanced import power, sqrt
 
 ### 10.3.2. 相对导入和绝对导入
 
+* 注意相对导包必须本身是**包中的模块**才行！！只有模块在包中才能生效
+
 在包内部，可以使用相对导入：
 
 ```python
@@ -1450,7 +2035,7 @@ if __name__ == "__main__":
 这是一个数学工具模块
 提供基本的数学运算函数
 """
-
+	
 def add(a, b):
     """返回两个数的和"""
     return a + b
@@ -1721,7 +2306,7 @@ print(f"{Colors.YELLOW}警告信息{Colors.END}")
 
 # 12. 文件操作
 
-[0文件操作](https://www.yuque.com/wds2dxh/gt6gw7/wb3g4zfxi8nn4mb3)
+[文件操作](./进阶/00文件操作.md)
 
 # 13. Python 错误与异常详解
 
@@ -1751,8 +2336,8 @@ finally:
 ```
 
 - **多分支捕获**：按顺序匹配，第一个符合就执行。
-- `**else**` **块**：无异常时执行，适合放主逻辑后续。
-- `**finally**` **块**：始终执行，用于释放资源（文件、网络、数据库连接等）。
+- `else` **块**：无异常时执行，适合放主逻辑后续。
+- `finally` **块**：始终执行，用于释放资源（文件、网络、数据库连接等）。
 
 ## 13.3. 主动抛出异常：`raise`
 
@@ -1861,142 +2446,175 @@ if __name__ == "__main__":
 
 作用域（Scope）决定了在程序的哪一部分可以访问特定的变量名称。Python 遵循 **LEGB** 规则，按从内到外的顺序搜索名称：
 
-1. **L（Local）局部作用域**
+1. **L（Local）局部作用域** - 当前函数或方法内部的命名空间，包括函数参数和在函数体内赋值的变量
+2. **E（Enclosing）闭包函数外侧作用域** - 嵌套函数外层（非全局）函数的命名空间，仅当存在嵌套函数时才会使用
+3. **G（Global）全局作用域** - 当前模块的顶层命名空间，在模块中定义的变量和函数
+4. **B（Built-in）内建作用域** - Python 解释器启动时加载的内建名称，如 `len`、`Exception` 等
 
-- 当前函数或方法内部的命名空间
-- 包括函数参数和在函数体内赋值的变量
+---
 
-1. **E（Enclosing）闭包函数外侧作用域**
+## 14.1. `global` 关键字
 
-- 嵌套函数外层（非全局）函数的命名空间
-- 仅当存在嵌套函数时才会使用
+**概念**：用于在函数内声明某名字指向模块级全局变量，允许在函数内部读写该全局变量。如果不加 `global` 关键字，函数体内对同名变量的赋值会创建一个新的局部变量，遮蔽全局同名变量。
 
-1. **G（Global）全局作用域**
-
-- 当前模块的顶层命名空间
-- 在模块中定义的变量和函数
-
-1. **B（Built‑in）内建作用域**
-
-- Python 解释器启动时加载的内建名称，如 `len`、`Exception` 等
-- 位于最外层，最后被搜索
-
-```python
-x = "GLOBAL"
-
-def outer():
-    x = "ENCLOSING"
-    def inner():
-        x = "LOCAL"
-        print("inner:", x)      # 使用 Local
-    inner()
-    print("outer:", x)          # 使用 Enclosing
-
-inner()    # NameError: inner 未定义
-print("global:", x)  # 使用 Global
-```
-
-------
-
-## 14.1. `global` 与 `nonlocal` 关键字
-
-### 14.1.1. 1. `global`
-
-- **用途**：在函数内声明某名字指向模块级全局变量，允许读写该全局变量
-- **示例**：
+**示例**：
 
 ```python
 count = 0  # 全局变量
 
 def inc():
-    global count
-    count += 1  # 修改全局 count
-    print("inside:", count)
+    global count  # 声明使用全局变量
+    count += 1
+    print(f"函数内: {count}")
 
-inc()        # inside: 1
-print("outside:", count)  # outside: 1
+def dec():
+    global count  # 声明使用全局变量
+    count -= 1
+    print(f"函数内: {count}")
+
+print(f"初始值: {count}")  # 初始值: 0
+inc()                      # 函数内: 1
+inc()                      # 函数内: 2
+dec()                      # 函数内: 1
+print(f"最终值: {count}")  # 最终值: 1
 ```
 
-- **注意**：若不加 `global`，函数体内对同名变量的赋值会创建一个新的局部变量，遮蔽全局同名变量。
+---
 
-### 14.1.2. 2. `nonlocal`（变量必须要已在外部定义）
+## 14.2. `nonlocal` 关键字
 
-- **用途**：在嵌套函数中声明某名字指向最内层外侧（Enclosing）函数作用域的变量，允许读写
-- **示例**：
+**概念**：在嵌套函数中声明某名字指向最内层外侧（Enclosing）函数作用域的变量，允许在嵌套函数中读写外层函数的变量。只能用于嵌套函数，且该变量在外层函数中必须已定义。注意：`nonlocal` 是 Python 3 专有特性。
+
+**示例**：
 
 ```python
 def outer():
-    num = 10  # Enclosing 作用域
+    x = 10  # Enclosing 作用域的变量
+    
     def inner():
-        nonlocal num
-        num = 100  # 修改 Enclosing 作用域中的 num
-        print("inner:", num)
-    inner()
-    print("outer:", num)
+        nonlocal x  # 声明使用外层函数的变量
+        x = 100
+        print(f"inner 内: {x}")
+    
+    def another():
+        nonlocal x  # 声明使用外层函数的变量
+        x += 50
+        print(f"another 内: {x}")
+    
+    print(f"outer 初始: {x}")  # outer 初始: 10
+    inner()                     # inner 内: 100
+    another()                   # another 内: 150
+    print(f"outer 最终: {x}")   # outer 最终: 150
 
-outer()	
-# 输出：
-# inner: 100
-# outer: 100
+outer()
 ```
 
-- **注意**：
+---
 
-- 只能用于嵌套函数，且该变量在外层函数中已定义。
-- Python 3 专有（Python 2 不支持）。
+## 14.3. Local 局部作用域
 
-------
+**概念**：函数内部定义的变量只在该函数内部有效。当函数执行完毕后，函数内的局部变量会被销毁。在函数外部无法访问局部变量。
 
-## 14.2. 常见误区与注意事项
-
-1. **函数内直接读取全局变量**
-
-- 只读场景无需 `global`：
+**示例**：
 
 ```python
-g = 5
-def foo():
-    print(g)  # 可直接读取
+def func():
+    y = 5  # 局部变量
+    z = 10
+    print(f"func 内部 y={y}, z={z}")
+
+func()  # func 内部 y=5, z=10
+
+try:
+    print(y)  # 尝试访问局部变量
+except NameError:
+    print("错误：y 是局部变量，在函数外无法访问")
 ```
 
-1. **赋值时的遮蔽（Shadowing）**
+---
 
-- 在函数体内对某名赋值，会自动视为局部变量，遮蔽外层同名：
+## 14.4. Enclosing 闭包作用域
+
+**概念**：外层函数内部定义的变量构成 Enclosing 作用域。当嵌套函数需要访问这些变量时，会先在 Local 作用域中查找，若找不到就会在 Enclosing 作用域中查找。嵌套函数可以访问（读取）外层函数的变量，但若要修改需要使用 `nonlocal` 关键字。
+
+**示例**：
+
+* 即使外层函数已经结束执行，变量 `z` 依然**随内层函数一同存活**，形成一个“被捕获的环境”。 
 
 ```python
-x = 1
-def f():
-    print(x)   # UnboundLocalError: x 在本地被引用但未赋值
-    x = 2      # Python 认为 x 是局部变量
+def outer():
+    x = 10
+    def inner():
+        print(x)   # inner 捕获了 x
+    return inner
+
+f = outer()  # outer 已返回
+f()           # 仍能访问 x，输出 10
 ```
 
-1. **列表推导式作用域（Python 3）**
+---
 
-- 列表推导式内部的变量不会污染外层作用域：
+## 14.5. 常见误区与注意事项
 
-```python
-i = 10
-lst = [i for i in range(3)]
-print(i)  # 10（外层 i 保持不变）
-```
+1. **只读不需要 `global`**：直接读取全局变量无需声明 `global` 关键字
 
-1. **内建名称覆盖**
+   ```python
+   x = 5
+   def foo():
+       print(x)  # 可以直接读取全局变量
+   foo()  # 输出: 5
+   ```
 
-- 避免使用与内建函数同名的变量：
+2. **赋值时的遮蔽（Shadowing）问题**：在函数体内对某名赋值，Python 会自动视为局部变量，遮蔽外层同名变量
 
-```python
-list = [1,2,3]
-# 之后无法再调用内建 list()，应使用其他名称
-```
+   ```python
+   x = 1
+   def f():
+       print(x)   # UnboundLocalError: x 被引用但未赋值
+       x = 2      # Python 解析时发现赋值，将 x 视为局部变量
+   f()
+   ```
 
-------
+3. **`nonlocal` 必须已定义**：在外层函数中必须已定义该变量，否则会报错
 
-## 14.3. 实际使用
+   ```python
+   def outer():
+       def inner():
+           nonlocal y  # 错误！y 在外层未定义
+           y = 10
+   ```
 
-- **尽量减少** `**global**` **使用**，全局可变状态易出错；
-- **闭包场景需谨慎**，`nonlocal` 用于状态保存或工厂函数；
-- **遵守命名规范**，避免与内建名、模块全局名冲突；
-- **优先使用函数参数和返回值**，以减少对外部状态的依赖。
+4. **避免过度使用 `global`**：全局可变状态容易导致代码混乱，优先使用函数参数和返回值
+
+   ```python
+   # 不推荐
+   total = 0
+   def add(x):
+       global total
+       total += x
+   
+   # 推荐
+   def add(total, x):
+       return total + x
+   ```
+
+5. **列表推导式作用域**：在 Python 3 中，列表推导式内部的变量不会污染外层作用域
+
+   ```python
+   i = 10
+   lst = [i for i in range(3)]
+   print(i)  # 输出: 10（外层 i 保持不变）
+   ```
+
+---
+
+## 14.6. 实际使用建议
+
+- **尽量减少 `global` 使用**，全局可变状态易出错
+- **闭包场景需谨慎**，`nonlocal` 用于状态保存或工厂函数
+- **遵守命名规范**，避免与内建名、模块全局名冲突
+- **优先使用函数参数和返回值**，以减少对外部状态的依赖
+- **在嵌套函数中明确使用 `nonlocal`**，增强代码可读性
 
 
 
