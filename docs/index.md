@@ -2,12 +2,12 @@
 layout: home
 
 hero:
-  name: "邬东升的博客"
+  name: "DongSheng's Blog"
   text: "随笔、技术、生活"
   tagline: 心中自有一杆秤，何须他人来妄谈！ 🚀
   image:
     src: /logo.svg
-    alt: 邬东升的博客 Logo
+    alt: DongSheng's Blog Logo
   actions:
     - theme: brand
       text: 🧑‍💻 关于我

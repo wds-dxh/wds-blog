@@ -5,8 +5,8 @@ import { withSidebar } from 'vitepress-sidebar';
 // VitePress 基础配置
 const vitePressConfigs = {
   ignoreDeadLinks: true, //忽略死链接
-  title: "邬东升的博客", //标题
-  description: "邬东升的博客", //描述
+  title: "DongSheng Wu's Blog", //标题
+  description: "DongSheng Wu's Blog", //描述
   // logo: "/logo.svg",
   lang: "zh-CN", //语言
   lastUpdated: true, //最后更新时间
@@ -34,7 +34,7 @@ const vitePressConfigs = {
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    siteTitle: "邬东升的博客",
+    siteTitle: "DongSheng Wu's Blog",
     logo: "/logo.svg", // 设置网站标题的 logo
 
     ////////////////// 最后更新时间配置 /////////////////////
